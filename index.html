@@ -178,24 +178,20 @@
     </div>
   </section>
 
- <section id='join'>
+<section id='join'>
   <h2 class='section-title'>Join the Early Access List</h2>
-  <p style='text-align:center; max-width:600px; margin:0 auto; font-size:1.1em;'>Be among the first to try Lexoris.</p>
-  <form action='https://formspree.io/f/mnnlabpr' method='POST'>
-    <input type='text' placeholder='First Name' required>
-    <input type='text' placeholder='Last Name' required>
-    <input type='email' placeholder='Email' required>
-    <button class='btn-primary' type='submit'>Join Now</button>
+  <p style='text-align:center; max-width:600px; margin:0 auto; font-size:1.1em;'>
+    Be among the first to try Lexoris.
+  </p>
+
+  <form id="contact-form" style="max-width:400px; margin:20px auto; display:flex; flex-direction:column; gap:10px;">
+    <input type='text' name='firstName' placeholder='First Name' required style="padding:10px; font-size:1em; border:1px solid #ccc; border-radius:5px;">
+    <input type='text' name='lastName' placeholder='Last Name' required style="padding:10px; font-size:1em; border:1px solid #ccc; border-radius:5px;">
+    <input type='email' name='email' placeholder='Email' required style="padding:10px; font-size:1em; border:1px solid #ccc; border-radius:5px;">
+    <button class='btn-primary' type='submit' style="padding:12px; font-size:1em; border-radius:5px; cursor:pointer;">Join Now</button>
+    <p id="form-message" style="display:none; text-align:center; font-weight:bold; margin-top:10px; opacity:0; transition: opacity 0.5s;"></p>
   </form>
 </section>
-
-  <footer style="padding:40px 20px;">
-    <div class='footer-logo'><img src='assets/Lexoris Logo.svg' alt='Lexoris Logo'></div>
-    <p><strong>Locally Hosted. Legally Accurate. Transcription You Can Trust.</strong></p>
-    <p><a href='#'>Terms of Service</a> | <a href='#'>Privacy Policy</a></p>
-    <p class='email'>Contact: <a href='mailto:admin@lexoris.com.au'>admin@lexoris.com.au</a></p>
-    <p>ABN: 91448850545 © Lexoris</p>
-  </footer>
 
 <script>
   // IntersectionObserver for section animations
@@ -211,9 +207,9 @@
     item.addEventListener('click', () => item.classList.toggle('active'));
   });
 
-  // Formspree JSON submission with styled message
+  // Formspree JSON submission with auto-fade message
   document.getElementById("contact-form").addEventListener("submit", async function(e) {
-    e.preventDefault(); // prevent default form submission
+    e.preventDefault();
 
     const form = e.target;
     const messageEl = document.getElementById("form-message");
@@ -235,25 +231,44 @@
       if (response.ok) {
         messageEl.textContent = "Thank you! You’ve joined the Early Access list.";
         messageEl.style.color = "#4CAF50"; // green success
-        messageEl.style.display = "block";
-        setTimeout(() => { messageEl.style.opacity = 1; }, 50); // fade-in
-        form.reset();
       } else {
         messageEl.textContent = "Oops! Something went wrong. Please try again.";
         messageEl.style.color = "#F44336"; // red error
-        messageEl.style.display = "block";
-        setTimeout(() => { messageEl.style.opacity = 1; }, 50);
         console.error("Formspree error:", await response.text());
       }
+
+      // Show and fade in the message
+      messageEl.style.display = "block";
+      messageEl.style.opacity = 1;
+
+      // Clear form and fade message out after 5 seconds
+      form.reset();
+      setTimeout(() => {
+        messageEl.style.opacity = 0;
+        setTimeout(() => { messageEl.style.display = "none"; }, 500); // hide after fade-out
+      }, 5000);
+
     } catch (err) {
       messageEl.textContent = "Network error: unable to send message.";
       messageEl.style.color = "#F44336";
       messageEl.style.display = "block";
-      setTimeout(() => { messageEl.style.opacity = 1; }, 50);
+      messageEl.style.opacity = 1;
       console.error(err);
+      setTimeout(() => {
+        messageEl.style.opacity = 0;
+        setTimeout(() => { messageEl.style.display = "none"; }, 500);
+      }, 5000);
     }
   });
 </script>
+
+  <footer style="padding:40px 20px;">
+    <div class='footer-logo'><img src='assets/Lexoris Logo.svg' alt='Lexoris Logo'></div>
+    <p><strong>Locally Hosted. Legally Accurate. Transcription You Can Trust.</strong></p>
+    <p><a href='#'>Terms of Service</a> | <a href='#'>Privacy Policy</a></p>
+    <p class='email'>Contact: <a href='mailto:admin@lexoris.com.au'>admin@lexoris.com.au</a></p>
+    <p>ABN: 91448850545 © Lexoris</p>
+  </footer>
 
 </body>
 </html>
