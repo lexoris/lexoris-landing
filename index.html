@@ -92,6 +92,53 @@
     footer p { margin: 8px 0; }
     footer .email a { color: #B31921; font-weight: 600; text-decoration: none; }
     footer .email a:hover { text-decoration: underline; }
+
+        /* =====================
+       Responsive & Mobile Fixes
+       ===================== */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    section, div, footer, header {
+      box-sizing: border-box;
+      width: 100%;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    .footer-logo img,
+    header img {
+      width: 120px;
+      max-width: 40vw;
+      height: auto;
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+    h1, h2, h3, p {
+      word-wrap: break-word;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.4rem; }
+      p, li, button { font-size: 1rem; }
+      .btn-primary { width: 100%; }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .pricing-card {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
   </style>
 
 <style>
