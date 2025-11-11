@@ -142,44 +142,104 @@
   </style>
 
 <style>
-/* ---- your original desktop look (kept) ---- */
-.comparison-wrapper{
-  background:#FFFFFF;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,0.08);
-  margin-top:40px;padding:32px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+.comparison-wrapper {
+  background: #FFFFFF;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-top: 40px;
+  padding: 32px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
-.comparison-wrapper h3{
-  text-align:center;font-family:'Manrope',sans-serif;font-size:1.6em;margin:0 0 20px;color:#0B132B;
-}
-.comparison-table{width:100%;border-collapse:collapse;text-align:center;font-size:1.02em;}
-.comparison-table th{background-color:#0B132B;color:#fff;padding:14px 12px;}
-.comparison-table td{padding:14px 12px;border-bottom:1px solid #eee;}
-.comparison-table tr:nth-child(even){background:#F7F7F9;}
-.comparison-table td:first-child{text-align:left;font-weight:600;color:#0B132B;}
-/* Lexoris column highlight (unchanged) */
-.comparison-table td:nth-child(2){
-  background:#FDF3F4;color:#B31921;font-weight:700;border-left:3px solid #B31921;border-right:3px solid #B31921;
-}
-/* tick / cross colours */
-.tick{color:#B31921;font-weight:700;display:inline-block;}
-.cross{color:#0B132B;font-weight:700;display:inline-block;}
 
-/* ---- mobile-only behaviour ---- */
-@media (max-width:768px){
-  /* give the table breathing room; allow sideways scroll instead of squashing */
-  .comparison-table{
-    min-width:650px;          /* prevents columns from collapsing */
-    font-size:0.9em;
+.comparison-wrapper h3 {
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.6em;
+  margin: 0 0 20px;
+  color: #0B132B;
+}
+
+/* Base table styling */
+.comparison-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 700px; /* keeps columns spaced nicely */
+  font-size: 1.02em;
+  text-align: center;
+}
+
+.comparison-table th {
+  background-color: #0B132B;
+  color: #fff;
+  padding: 14px 12px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.comparison-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+
+.comparison-table tr:nth-child(even) {
+  background: #F7F7F9;
+}
+
+/* First (feature) column — fixed left */
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+  position: sticky;
+  left: 0;
+  background: #fff;
+  text-align: left;
+  font-weight: 600;
+  color: #0B132B;
+  z-index: 3;
+}
+
+/* Lexoris column highlight */
+.comparison-table th:nth-child(2),
+.comparison-table td:nth-child(2) {
+  background: #FDF3F4;
+  border-left: 3px solid #B31921;
+  border-right: 3px solid #B31921;
+  color: #B31921;
+  font-weight: 700;
+  z-index: 1;
+}
+
+/* Keep ticks/crosses visible */
+.tick {
+  color: #B31921;
+  font-weight: 700;
+}
+.cross {
+  color: #0B132B;
+  font-weight: 700;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .comparison-wrapper {
+    padding: 20px 10px;
   }
-  .comparison-table th,.comparison-table td{padding:10px 8px;}
-  
-  /* make ONLY the first column sticky; keep header & Lexoris column NON-sticky */
+
+  .comparison-table {
+    min-width: 600px;
+    font-size: 0.9em;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 10px 8px;
+  }
+
+  /* keep the sticky column visible */
   .comparison-table th:first-child,
-  .comparison-table td:first-child{
-    position:sticky;
-    left:0;
-    z-index:2;
-    background:#FFFFFF;       /* same as wrapper so it doesn’t show the pink or navy underlap */
-    box-shadow: 8px 0 0 #FFFFFF; /* soft mask so the red rail doesn’t peek under */
+  .comparison-table td:first-child {
+    box-shadow: 4px 0 0 #fff;
   }
 }
 </style>
