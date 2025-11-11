@@ -142,16 +142,87 @@
   </style>
 
 <style>
-.comparison-wrapper{background:#FFFFFF;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,0.08);margin-top:40px;padding:32px;overflow-x:auto;}
-.comparison-wrapper h3{text-align:center;font-family:'Manrope',sans-serif;font-size:1.6em;margin:0 0 20px;color:#0B132B;}
-.comparison-table{width:100%;border-collapse:collapse;text-align:center;font-size:1.02em;}
-.comparison-table th{background-color:#0B132B;color:#fff;padding:14px 12px;}
-.comparison-table td{padding:14px 12px;border-bottom:1px solid #eee;}
+.comparison-wrapper {
+  background:#FFFFFF;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  margin-top:40px;
+  padding:32px;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch; /* smooth scroll on iOS */
+}
+
+.comparison-wrapper h3 {
+  text-align:center;
+  font-family:'Manrope',sans-serif;
+  font-size:1.6em;
+  margin:0 0 20px;
+  color:#0B132B;
+}
+
+.comparison-table {
+  width:100%;
+  border-collapse:collapse;
+  text-align:center;
+  font-size:1.02em;
+  min-width:650px; /* keeps full table width on mobile */
+  position:relative;
+}
+
+/* header */
+.comparison-table th {
+  background-color:#0B132B;
+  color:#fff;
+  padding:14px 12px;
+  white-space:nowrap;
+  position:sticky;
+  top:0;
+  z-index:3; /* keep header above cells */
+}
+
+/* cells */
+.comparison-table td {
+  padding:14px 12px;
+  border-bottom:1px solid #eee;
+  white-space:nowrap;
+}
+
 .comparison-table tr:nth-child(even){background:#F7F7F9;}
-.comparison-table td:first-child{text-align:left;font-weight:600;color:#0B132B;}
-.comparison-table td:nth-child(2){background:#FDF3F4;color:#B31921;font-weight:700;border-left:3px solid #B31921;border-right:3px solid #B31921;}
-.tick{color:#B31921;font-weight:700;}
-.cross{color:#0B132B;font-weight:700;}
+
+/* first column fixed */
+.comparison-table td:first-child,
+.comparison-table th:first-child {
+  position:sticky;
+  left:0;
+  z-index:2;
+  background:#fff; /* same as wrapper */
+  text-align:left;
+  font-weight:600;
+  color:#0B132B;
+  white-space:normal;
+}
+
+/* Lexoris column highlight */
+.comparison-table td:nth-child(2),
+.comparison-table th:nth-child(2){
+  background:#FDF3F4;
+  color:#B31921;
+  font-weight:700;
+  border-left:3px solid #B31921;
+  border-right:3px solid #B31921;
+}
+
+/* tick / cross colours */
+.tick {color:#B31921;font-weight:700;display:inline-block;}
+.cross {color:#0B132B;font-weight:700;display:inline-block;}
+
+/* mobile adjustments */
+@media (max-width:768px){
+  .comparison-wrapper{padding:20px 10px;}
+  .comparison-table{font-size:0.9em;min-width:550px;}
+  .comparison-table th,
+  .comparison-table td{padding:10px 8px;}
+}
 </style>
 
 </head>
