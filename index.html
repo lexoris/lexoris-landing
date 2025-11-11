@@ -152,6 +152,7 @@
   -webkit-overflow-scrolling: touch;
 }
 
+/* Heading */
 .comparison-wrapper h3 {
   text-align: center;
   font-family: 'Manrope', sans-serif;
@@ -164,9 +165,9 @@
 .comparison-table {
   border-collapse: collapse;
   width: 100%;
-  min-width: 700px; /* keeps columns spaced nicely */
   font-size: 1.02em;
   text-align: center;
+  min-width: 720px; /* prevents column overlap on mobile */
 }
 
 .comparison-table th {
@@ -174,7 +175,9 @@
   color: #fff;
   padding: 14px 12px;
   white-space: nowrap;
-  z-index: 2;
+  position: sticky;
+  top: 0;
+  z-index: 3;
 }
 
 .comparison-table td {
@@ -183,11 +186,12 @@
   white-space: nowrap;
 }
 
+/* Alternate row shading */
 .comparison-table tr:nth-child(even) {
   background: #F7F7F9;
 }
 
-/* First (feature) column — fixed left */
+/* First (feature) column sticky on mobile */
 .comparison-table th:first-child,
 .comparison-table td:first-child {
   position: sticky;
@@ -196,50 +200,50 @@
   text-align: left;
   font-weight: 600;
   color: #0B132B;
-  z-index: 3;
+  z-index: 4;
 }
 
 /* Lexoris column highlight */
 .comparison-table th:nth-child(2),
 .comparison-table td:nth-child(2) {
   background: #FDF3F4;
-  border-left: 3px solid #B31921;
-  border-right: 3px solid #B31921;
   color: #B31921;
   font-weight: 700;
+  border-left: 3px solid #B31921;
+  border-right: 3px solid #B31921;
   z-index: 1;
 }
 
-/* Keep ticks/crosses visible */
-.tick {
-  color: #B31921;
-  font-weight: 700;
-}
-.cross {
-  color: #0B132B;
-  font-weight: 700;
-}
+/* Tick & Cross colours */
+.tick { color: #B31921; font-weight: 700; }
+.cross { color: #0B132B; font-weight: 700; }
 
-/* Mobile optimization */
+/* --- MOBILE FIXES --- */
 @media (max-width: 768px) {
   .comparison-wrapper {
-    padding: 20px 10px;
+    padding: 20px 0;
+    border-radius: 0;
   }
 
+  /* force scroll container */
   .comparison-table {
-    min-width: 600px;
-    font-size: 0.9em;
+    display: block;
+    overflow-x: auto;
+    min-width: 650px;
+    -webkit-overflow-scrolling: touch;
   }
 
+  /* fix width + spacing */
   .comparison-table th,
   .comparison-table td {
     padding: 10px 8px;
+    font-size: 0.9rem;
   }
 
-  /* keep the sticky column visible */
+  /* ensure sticky first column stays visible */
   .comparison-table th:first-child,
   .comparison-table td:first-child {
-    box-shadow: 4px 0 0 #fff;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.05);
   }
 }
 </style>
