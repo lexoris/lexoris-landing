@@ -469,46 +469,6 @@ header .brand h1 {
 .tick { color: #B31921; font-weight: 700; }
 .cross { color: #0B132B; font-weight: 700; }
 .tick, .cross { font-size: 1.4rem; }
-
-  /* ============================================
-   CORRECT MOBILE BEHAVIOUR FOR COMPARISON TABLE
-============================================ */
-@media (max-width: 768px) {
-
-  /* Scroll container must scroll */
-  .comparison-wrapper {
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 10px;
-  }
-
-  /* Table must exceed screen width */
-  .comparison-table {
-    min-width: 720px !important;
-    width: max-content !important;
-  }
-
-  /* Header cells */
-  .comparison-table th,
-  .comparison-table td {
-    white-space: nowrap !important;
-    padding: 10px 16px !important;
-    font-size: 0.95rem !important;
-  }
-}
-  
-   /* FINAL MOBILE FIX FOR COMPARISON TABLE */
-  @media (max-width: 768px) {
-
-    .comparison-wrapper {
-      overflow-x: auto !important;
-      padding-bottom: 20px !important;
-    }
-
-    .comparison-table {
-      min-width: 720px !important;
-    }
-  }
   
   /* ============================================
    FIX MOBILE HORIZONTAL SPACING (CRAMPED AREAS)
