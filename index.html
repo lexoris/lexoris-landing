@@ -51,7 +51,13 @@
     header .brand h1 { font-family: 'Manrope', sans-serif; font-size: 1.9em; letter-spacing: 0.5px; margin: 0; }
     header .cta { background-color: #B31921; padding: 10px 20px; border-radius: 8px; color: white; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
     header .cta:hover { background-color: #8b0000; }
-    
+
+  /* Prevent header wrapping and add spacing */
+  header {
+  white-space: nowrap;
+  gap: 40px;
+  }
+
     /* -------- NAVIGATION (DESKTOP) -------- */
 .nav-links {
   display: flex;
@@ -67,11 +73,24 @@
   font-weight: 600;
   opacity: 0.9;
   transition: 0.2s;
+  white-space: nowrap; /* prevents wrapping */
+}
+    
+.desktop-register {
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
   opacity: 1;
   color: #B31921;
+}
+   
+/* Navigation spacing fix */
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  white-space: nowrap;
 }
 
 /* Hide mobile-only register button on desktop */
