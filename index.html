@@ -172,6 +172,8 @@
     .hero { text-align: center; padding: 140px 20px; background: linear-gradient(135deg, #0B132B, #111C3A); color: white; }
     .hero h2 { font-family: 'Manrope'; font-size: 3.2em; margin-bottom: 20px; }
     .hero p { font-size: 1.3em; max-width: 750px; margin: 0 auto 40px; }
+    .hero-title {line-height: 1.3; margin-bottom: 30px;}
+
     .btn-primary { background-color: #B31921; color: white; padding: 14px 38px; border: none; border-radius: 8px; font-size: 1.05em; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(179,25,33,0.35); }
     .btn-primary:hover { background-color: #8b0000; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(179,25,33,0.4); }
 
@@ -417,11 +419,12 @@
 </header>
 
   <div class='hero'>
-  <h2>
+ <h2 class="hero-title">
   Locally Hosted.<br>
   Legally Accurate.<br>
   Transcription You Can Trust.
-  </h2>
+</h2>
+
     <p>The transcription platform built for legal professionals exclusively hosted on Australian servers.</p>
     <button class='btn-primary' onclick="document.querySelector('#join').scrollIntoView({behavior:'smooth'})">Register for Early Access</button>
   </div>
