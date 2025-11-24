@@ -44,42 +44,55 @@
     html { scroll-behavior: smooth; }
     body { margin: 0; font-family: 'Source Sans 3', sans-serif; color: #0B132B; background-color: #FAFAFA; overflow-x: hidden; }
 
-/* =========================
-   HEADER (DESKTOP)
-   ========================= */
+/* ============================
+   HEADER — DESKTOP
+============================ */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: linear-gradient(135deg, #0B132B, #111C3A);
-  padding: 20px 60px;
   color: white;
-  position: relative; /* anchor for dropdown */
+  padding: 20px 60px;
+  position: relative;
+  z-index: 10000;
+  white-space: nowrap;
 }
 
-/* Brand */
 header .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
-/* Desktop nav */
+header .brand img {
+  height: 75px;
+  width: auto;
+}
+
+header .brand h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.9em;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Desktop Navigation */
 .nav-links {
   display: flex;
+  gap: 32px;
   align-items: center;
-  gap: 28px;
 }
 
 .nav-links a {
   color: white;
-  font-family: "Manrope", sans-serif;
-  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.05em;
+  text-decoration: none;
   font-weight: 600;
   opacity: 0.9;
+  transition: 0.2s ease;
   white-space: nowrap;
-  transition: .2s;
 }
 
 .nav-links a:hover {
@@ -87,19 +100,29 @@ header .brand {
   color: #B31921;
 }
 
-/* Desktop CTA */
-.desktop-register {
+/* Desktop Register button */
+.cta.desktop-register {
+  background-color: #B31921;
+  padding: 10px 22px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  transition: 0.3s ease;
   white-space: nowrap;
 }
 
-/* Mobile register button hidden by default */
+.cta.desktop-register:hover {
+  background-color: #8b0000;
+}
+
+/* Mobile Register button */
 .mobile-register {
   display: none;
 }
 
-/* =========================
-   HAMBURGER (MOBILE)
-   ========================= */
+/* Hamburger (Mobile) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -112,54 +135,51 @@ header .brand {
   height: 3px;
   background: white;
   border-radius: 2px;
-  transition: .3s;
+  transition: 0.3s ease;
 }
 
-/* Hamburger animation when active */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translateY(8px);
 }
+
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translateY(-8px);
 }
 
-/* =========================
+/* ============================
    MOBILE MENU
-   ========================= */
+============================ */
 @media (max-width: 900px) {
 
   header {
     padding: 20px 30px;
-    position: relative;
-    z-index: 10000;
+    white-space: normal;
   }
 
-  /* show hamburger */
-  .hamburger {
-    display: flex;
-  }
-
-  /* hide desktop Register */
   .desktop-register {
     display: none;
   }
 
-  /* dropdown */
+  .hamburger {
+    display: flex;
+  }
+
   .nav-links {
     position: absolute;
-    top: 100%; /* sits BELOW header */
+    top: 100%;
     right: 0;
     width: 100%;
     background: #0B132B;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px 30px;
-    gap: 20px;
+    padding: 25px 35px;
+    gap: 22px;
     display: none;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
     z-index: 9999;
   }
 
@@ -168,7 +188,7 @@ header .brand {
   }
 
   .nav-links a {
-    font-size: 1.2em;
+    font-size: 1.25em;
     opacity: 1;
   }
 
@@ -178,7 +198,9 @@ header .brand {
     padding: 12px 20px;
     border-radius: 8px;
     font-weight: 700;
+    margin-top: 10px;
     color: white;
+    text-decoration: none;
   }
 }
 
