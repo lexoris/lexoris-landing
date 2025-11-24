@@ -44,21 +44,23 @@
     html { scroll-behavior: smooth; }
     body { margin: 0; font-family: 'Source Sans 3', sans-serif; color: #0B132B; background-color: #FAFAFA; overflow-x: hidden; }
 
-/* ============================
-   HEADER — DESKTOP
-============================ */
+/* ============================================
+   HEADER (FULLY CLEAN + STABLE)
+============================================ */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: linear-gradient(135deg, #0B132B, #111C3A);
-  color: white;
   padding: 20px 60px;
+  color: white;
   position: relative;
-  z-index: 10000;
-  white-space: nowrap;
+  z-index: 2000;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* Brand */
 header .brand {
   display: flex;
   align-items: center;
@@ -66,15 +68,16 @@ header .brand {
 }
 
 header .brand img {
-  height: 75px;
+  height: 70px;
   width: auto;
 }
 
 header .brand h1 {
+  margin: 0;
   font-family: 'Manrope', sans-serif;
   font-size: 1.9em;
-  margin: 0;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 /* Desktop Navigation */
@@ -87,8 +90,8 @@ header .brand h1 {
 .nav-links a {
   color: white;
   font-family: 'Manrope', sans-serif;
-  font-size: 1.05em;
   text-decoration: none;
+  font-size: 1.05em;
   font-weight: 600;
   opacity: 0.9;
   transition: 0.2s ease;
@@ -102,72 +105,76 @@ header .brand h1 {
 
 /* Desktop Register button */
 .cta.desktop-register {
-  background-color: #B31921;
+  background: #B31921;
   padding: 10px 22px;
   border-radius: 8px;
-  color: white;
-  text-decoration: none;
   font-family: 'Manrope', sans-serif;
+  font-size: 1em;
   font-weight: 700;
-  transition: 0.3s ease;
+  text-decoration: none;
+  color: white;
   white-space: nowrap;
+  transition: 0.3s ease;
 }
 
 .cta.desktop-register:hover {
-  background-color: #8b0000;
+  background: #8b0000;
 }
 
-/* Mobile Register button */
+/* Hide mobile-only Register by default */
 .mobile-register {
   display: none;
 }
 
-/* Hamburger (Mobile) */
+/* ============================================
+   HAMBURGER
+============================================ */
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
 }
 
 .hamburger span {
-  width: 26px;
+  width: 28px;
   height: 3px;
   background: white;
   border-radius: 2px;
   transition: 0.3s ease;
 }
 
+/* Hamburger animation */
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
+  transform: rotate(45deg) translateY(9px);
 }
-
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
-
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
+  transform: rotate(-45deg) translateY(-9px);
 }
 
-/* ============================
+/* ============================================
    MOBILE MENU
-============================ */
+============================================ */
 @media (max-width: 900px) {
 
   header {
     padding: 20px 30px;
-    white-space: normal;
   }
 
+  /* hide desktop CTA */
   .desktop-register {
     display: none;
   }
 
+  /* show hamburger */
   .hamburger {
     display: flex;
   }
 
+  /* dropdown panel */
   .nav-links {
     position: absolute;
     top: 100%;
@@ -179,8 +186,8 @@ header .brand h1 {
     padding: 25px 35px;
     gap: 22px;
     display: none;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
-    z-index: 9999;
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.35);
+    z-index: 5000;
   }
 
   .nav-links.open {
@@ -195,12 +202,11 @@ header .brand h1 {
   .mobile-register {
     display: block;
     background: #B31921;
-    padding: 12px 20px;
+    padding: 12px 18px;
     border-radius: 8px;
     font-weight: 700;
-    margin-top: 10px;
     color: white;
-    text-decoration: none;
+    margin-top: 10px;
   }
 }
 
