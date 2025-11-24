@@ -51,6 +51,103 @@
     header .brand h1 { font-family: 'Manrope', sans-serif; font-size: 1.9em; letter-spacing: 0.5px; margin: 0; }
     header .cta { background-color: #B31921; padding: 10px 20px; border-radius: 8px; color: white; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
     header .cta:hover { background-color: #8b0000; }
+    
+    /* -------- NAVIGATION (DESKTOP) -------- */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.05em;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  color: #B31921;
+}
+
+/* Hide mobile-only register button on desktop */
+.mobile-register { display: none; }
+
+/* -------- HAMBURGER (MOBILE) -------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* -------- MOBILE MENU -------- */
+@media (max-width: 900px) {
+  .desktop-register {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 90px;
+    right: 0;
+    width: 100%;
+    background: #0B132B;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 40px;
+    gap: 20px;
+    display: none;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 1.2em;
+    opacity: 1;
+  }
+
+  .mobile-register {
+    display: block;
+    background: #B31921;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: 700;
+    color: white;
+  }
+}
 
     /* HERO */
     .hero { text-align: center; padding: 140px 20px; background: linear-gradient(135deg, #0B132B, #111C3A); color: white; }
@@ -276,13 +373,29 @@
 
 </head>
 <body>
-  <header>
-    <div class='brand'>
-      <img src='assets/Lexoris Logo.svg' alt='Lexoris Logo'>
-      <h1>LEXORIS</h1>
-    </div>
-    <a href='#join' class='cta'>Register</a>
-  </header>
+<header>
+  <div class='brand'>
+    <img src='assets/Lexoris Logo.svg' alt='Lexoris Logo'>
+    <h1>LEXORIS</h1>
+  </div>
+
+  <!-- Hamburger Button (mobile only) -->
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+
+  <!-- Desktop + Mobile Menu -->
+  <nav class="nav-links" id="nav-menu">
+    <a href="#how-it-works" onclick="closeMenu()">How it Works</a>
+    <a href="#core-features" onclick="closeMenu()">Why Lexoris?</a>
+    <a href="#pricing" onclick="closeMenu()">Pricing</a>
+    <a href="#faq" onclick="closeMenu()">FAQ</a>
+    <a href="#join" class="mobile-register" onclick="closeMenu()">Register</a>
+  </nav>
+
+  <!-- Desktop CTA -->
+  <a href='#join' class='cta desktop-register'>Register</a>
+</header>
 
   <div class='hero'>
     <h2>Locally Hosted. Legally Accurate. Transcription You Can Trust.</h2>
@@ -368,6 +481,43 @@
   </form>
 </section>
 
+  <footer style="padding:40px 20px;">
+    <div class='footer-logo'><img src='assets/Lexoris Logo.svg' alt='Lexoris Logo'></div>
+    <p><strong>Locally Hosted. Legally Accurate. Transcription You Can Trust.</strong></p>
+    <p>
+  <a href="terms.html">Terms of Service</a> |
+  <a href="privacy.html">Privacy Policy</a>
+  <p>
+    
+<!-- Social Icons -->
+<p style="margin-top:10px; display:flex; justify-content:center; gap:12px; align-items:center;">
+    
+    <!-- LinkedIn Icon -->
+    <a href="https://www.linkedin.com/company/lexoris" target="_blank" rel="noopener noreferrer">
+        <img 
+            src="assets/linkedin.png" 
+            alt="LinkedIn" 
+            style="width:28px; height:28px; opacity:0.9; transition:0.2s;"
+            onmouseover="this.style.opacity='1'"
+            onmouseout="this.style.opacity='0.9'"
+        >
+    </a>
+
+    <!-- GDPR Icon -->
+    <img 
+        src="assets/gdprcompliant.png" 
+        alt="GDPR Compliant" 
+        style="width:28px; height:28px; opacity:0.9; transition:0.2s;"
+        onmouseover="this.style.opacity='1'"
+        onmouseout="this.style.opacity='0.9'"
+    >
+
+</p>
+
+    <p class='email'>Contact: <a href='mailto:admin@lexoris.com.au'>admin@lexoris.com.au</a></p>
+    <p>ABN: 91448850545 © Lexoris</p>
+  </footer>
+  
 <script>
   // IntersectionObserver for section animations
   const observer = new IntersectionObserver(entries => {
@@ -436,43 +586,21 @@
     }
   });
 </script>
+  
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
 
-  <footer style="padding:40px 20px;">
-    <div class='footer-logo'><img src='assets/Lexoris Logo.svg' alt='Lexoris Logo'></div>
-    <p><strong>Locally Hosted. Legally Accurate. Transcription You Can Trust.</strong></p>
-    <p>
-  <a href="terms.html">Terms of Service</a> |
-  <a href="privacy.html">Privacy Policy</a>
-  <p>
-    
-<!-- Social Icons -->
-<p style="margin-top:10px; display:flex; justify-content:center; gap:12px; align-items:center;">
-    
-    <!-- LinkedIn Icon -->
-    <a href="https://www.linkedin.com/company/lexoris" target="_blank" rel="noopener noreferrer">
-        <img 
-            src="assets/linkedin.png" 
-            alt="LinkedIn" 
-            style="width:28px; height:28px; opacity:0.9; transition:0.2s;"
-            onmouseover="this.style.opacity='1'"
-            onmouseout="this.style.opacity='0.9'"
-        >
-    </a>
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("open");
+  });
 
-    <!-- GDPR Icon -->
-    <img 
-        src="assets/gdprcompliant.png" 
-        alt="GDPR Compliant" 
-        style="width:28px; height:28px; opacity:0.9; transition:0.2s;"
-        onmouseover="this.style.opacity='1'"
-        onmouseout="this.style.opacity='0.9'"
-    >
-
-</p>
-
-    <p class='email'>Contact: <a href='mailto:admin@lexoris.com.au'>admin@lexoris.com.au</a></p>
-    <p>ABN: 91448850545 © Lexoris</p>
-  </footer>
-
+  function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("open");
+  }
+</script>
+  
 </body>
 </html>
