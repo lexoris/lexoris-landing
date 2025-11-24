@@ -263,6 +263,24 @@ header .brand h1 {
     section { padding: 100px 20px; max-width: 1200px; margin: auto; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
     section.visible { opacity: 1; transform: translateY(0); }
 
+    /* Fix pricing section being cut off */
+#pricing {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+    
+.pricing-cards {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+.pricing-cards .card {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
     /* HOW IT WORKS */
     #how-it-works { background: #FAFAFA; }
     .how-it-works-container { display: flex; flex-direction: column; align-items: center; max-width: 800px; margin: 0 auto; }
