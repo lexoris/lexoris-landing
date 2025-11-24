@@ -59,6 +59,12 @@ header {
   width: 100%;
   box-sizing: border-box;
 }
+    
+header {
+  width: 100%;
+  padding-left: 60px !important;
+  padding-right: 60px !important;
+}
 
 /* Brand */
 header .brand {
@@ -101,6 +107,16 @@ header .brand h1 {
 .nav-links a:hover {
   opacity: 1;
   color: #B31921;
+}
+    
+header {
+  position: relative;
+  z-index: 5000;
+}
+
+.nav-links {
+  position: absolute;
+  width: 100%;
 }
 
 /* Desktop Register button */
@@ -159,6 +175,11 @@ header .brand h1 {
    MOBILE MENU
 ============================================ */
 @media (max-width: 900px) {
+  
+  .nav-links {
+  left: 0;
+  right: 0;
+}
 
   header {
     padding: 20px 30px;
@@ -286,18 +307,6 @@ header .brand h1 {
       max-width: 100%;
       height: auto;
     }
-    
-    section {
-  box-sizing: border-box;
-  padding-left: 5%;
-  padding-right: 5%;
-  }
-
-   .footer-logo img {
-  width: 120px;
-  height: auto;
-  image-rendering: -webkit-optimize-contrast;
-  }
 
     h1, h2, h3, p {
       word-wrap: break-word;
@@ -319,6 +328,11 @@ header .brand h1 {
       .pricing-card {
         width: 100%;
         margin-bottom: 20px;
+      }
+      
+      .pricing-cards {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
       }
     }
 
