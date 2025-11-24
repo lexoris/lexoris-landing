@@ -486,6 +486,46 @@ header .brand h1 {
   }
 
 }
+/* ============================================
+   FINAL FIX — MOBILE TABLE + COLOURS RESTORE
+============================================ */
+@media (max-width: 768px) {
+
+  /* Force wrapper to scroll horizontally */
+  .comparison-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 12px;
+  }
+
+  /* Table must be wider than screen */
+  .comparison-table {
+    min-width: 720px !important;
+    width: 720px !important;
+    display: table !important;
+  }
+
+  /* Restore tick / cross colours */
+  .tick { 
+    color: #B31921 !important; 
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+
+  .cross { 
+    color: #0B132B !important; 
+    font-weight: 700; 
+    font-size: 1.4rem;
+  }
+
+  /* Restore Lexoris highlight column */
+  .comparison-table th:nth-child(2),
+  .comparison-table td:nth-child(2) {
+    background: #FDF3F4 !important;
+    border-left: 3px solid #B31921 !important;
+    border-right: 3px solid #B31921 !important;
+  }
+}
 
 </style>
 
