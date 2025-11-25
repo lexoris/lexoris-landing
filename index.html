@@ -523,6 +523,28 @@ header .brand h1 {
   }
 
 }
+/* ============================================
+   RESTORE DESKTOP LEXORIS COLUMN COLOURS
+   (MUST COME AFTER MOBILE RULES)
+============================================ */
+@media (min-width: 769px) {
+
+  .comparison-table th:nth-child(2),
+  .comparison-table td:nth-child(2) {
+    background: #FDF3F4 !important;
+    color: #B31921 !important;
+    border-left: 3px solid #B31921 !important;
+    border-right: 3px solid #B31921 !important;
+  }
+
+  .tick {
+    color: #B31921 !important;
+  }
+
+  .cross {
+    color: #0B132B !important;
+  }
+}
 
 </style>
 
