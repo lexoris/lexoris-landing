@@ -474,15 +474,54 @@ header .brand h1 {
    FIX MOBILE HORIZONTAL SPACING (CRAMPED AREAS)
 ============================================ */
 @media (max-width: 768px) {
+/* ============================================
+   FINAL FIX — WORKING MOBILE TABLE (VERTICAL)
+============================================ */
+@media (max-width: 768px) {
 
-  section {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
+  /* Wrapper must scroll horizontally */
+  .comparison-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 14px;
   }
 
-  .faq {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+  /* Table must be wider than the screen */
+  .comparison-table {
+    min-width: 900px !important;
+    width: 900px !important;
+    display: table !important;
+  }
+
+  /* Restore Lexoris highlight */
+  .comparison-table th:nth-child(2),
+  .comparison-table td:nth-child(2) {
+    background: #FDF3F4 !important;
+    border-left: 3px solid #B31921 !important;
+    border-right: 3px solid #B31921 !important;
+    color: #B31921 !important;
+  }
+
+  /* Sticky first column on mobile */
+  .comparison-table th:first-child,
+  .comparison-table td:first-child {
+    position: sticky !important;
+    left: 0 !important;
+    background: #FFF !important;
+    z-index: 10 !important;
+  }
+
+  /* Correct mobile tick / cross colours */
+  .tick {
+    color: #B31921 !important;
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+
+  .cross {
+    color: #0B132B !important;
+    font-weight: 700;
+    font-size: 1.4rem;
   }
 
 }
