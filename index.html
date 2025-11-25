@@ -369,6 +369,22 @@ header .brand h1 {
         width: 100%;
         margin-bottom: 20px;
       }
+    
+/* ============================================
+   HERO TEXT FIX FOR MOBILE
+============================================ */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+    padding: 0 20px !important;
+  }
+
+  .hero p {
+    font-size: 1.1rem !important;
+    padding: 0 20px !important;
+  }
+}
 
   </style>
 
@@ -498,6 +514,12 @@ header .brand h1 {
     color: #0B132B !important;
     font-weight: 700;
     font-size: 1.4rem;
+  }
+  
+  /* Prevent Safari breaking tick/cross colours */
+  .tick, .cross {
+    display: block !important;
+    text-align: center !important;
   }
 
 }
