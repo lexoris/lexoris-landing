@@ -21,22 +21,29 @@
     table { width:100%; border-collapse:collapse; margin:1em 0; }
     th,td { border:1px solid #eee; padding:8px 10px; text-align:left; }
     @media (max-width:768px) { main { margin:32px auto; } }
-    footer {
-    text-align:center;
-    padding:32px 20px;
-    background: var(--navy); /* navy background */
-    color: #FAFAFA; /* white text */
-    margin-top:48px;
-    }
+footer {
+  text-align:center;
+  padding:32px 20px;
+  background: var(--navy);
+  color:#FAFAFA;
+  margin-top:48px;
 
-    footer a, footer p, footer strong {
-    color:#FAFAFA !important;
-    }
+  /* FULL WIDTH FIXES */
+  width:100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
 
-    footer a:hover {
-    color:var(--red) !important;
-    }
-    footer a:hover {color: #B31921 !important; /* red hover to match brand */}
+footer a, footer p, footer strong {
+  color:#FAFAFA !important;
+}
+
+footer a:hover {
+  color:var(--red) !important;
+}
+
   </style>
 </head>
 <body>
