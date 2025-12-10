@@ -14,19 +14,19 @@ const Footer = () => {
         Locally Hosted. Legally Accurate. Transcription You Can Trust.
       </p>
       
-      <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-0 mb-4">
-        <Link to="/terms" className="hover:text-primary transition-colors px-2 py-1">
-          Terms of Use
-        </Link>
-        <span className="hidden md:inline">|</span>
-        <Link to="/privacy" className="hover:text-primary transition-colors px-2 py-1">
-          Privacy Policy
-        </Link>
-        <span className="hidden md:inline">|</span>
-        <Link to="/security" className="hover:text-primary transition-colors px-2 py-1">
-          Security
-        </Link>
-      </div>
+  <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-0 mb-4">
+  <a href="/terms.html" className="hover:text-primary transition-colors px-2 py-1">
+    Terms of Use
+  </a>
+  <span className="hidden md:inline">|</span>
+  <a href="/privacy.html" className="hover:text-primary transition-colors px-2 py-1">
+    Privacy Policy
+  </a>
+  <span className="hidden md:inline">|</span>
+  <a href="/security" className="hover:text-primary transition-colors px-2 py-1">
+    Security
+  </a>
+</div>
       
       <div className="flex justify-center gap-3 my-4">
         <a
