@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 50% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 50% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 50% 11%;
+
+    --primary: 357 75% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 50% 11%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 357 75% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 357 75% 40%;
+
+    --radius: 0.5rem;
+
+    /* Lexoris Brand Colors */
+    --lexoris-navy: 220 50% 11%;
+    --lexoris-navy-light: 222 35% 18%;
+    --lexoris-red: 357 75% 40%;
+    --lexoris-red-dark: 357 100% 27%;
+    --lexoris-bg: 0 0% 98%;
+    --lexoris-white: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-header: linear-gradient(135deg, hsl(220, 50%, 11%), hsl(222, 35%, 18%));
+    --gradient-hero: linear-gradient(135deg, hsl(220, 50%, 11%), hsl(222, 35%, 18%));
+
+    /* Shadows */
+    --shadow-card: 0 6px 18px rgba(0, 0, 0, 0.06);
+    --shadow-card-hover: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --shadow-button: 0 4px 10px rgba(179, 25, 33, 0.35);
+    --shadow-button-hover: 0 6px 16px rgba(179, 25, 33, 0.4);
+  }
+
+  .dark {
+    --background: 220 50% 11%;
+    --foreground: 0 0% 98%;
+    --card: 222 35% 18%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 35% 18%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 357 75% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 30% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 30% 20%;
+    --muted-foreground: 220 10% 70%;
+    --accent: 357 75% 40%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 357 75% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
+  }
+}
+
+@layer components {
+  .hero-accent {
+    color: #C42025;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold text-center mb-12 relative;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply block w-20 h-[3px] bg-primary mx-auto mt-5 rounded-sm;
+  }
+
+  .feature-card {
+    @apply bg-card rounded-xl p-8 border-t-4 border-primary transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .how-step {
+    @apply bg-muted rounded-xl p-8 text-center transition-all duration-300 flex flex-col justify-between min-h-[270px];
+    box-shadow: var(--shadow-card);
+  }
+
+  .how-step:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .pricing-card {
+    @apply bg-card rounded-xl p-10 text-center border-t-4 border-transparent transition-all duration-300 flex flex-col justify-between h-full;
+    box-shadow: var(--shadow-card);
+  }
+
+  .pricing-card:hover {
+    @apply border-primary;
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .plan-logo {
+    @apply w-12 h-auto mb-[18px] block mx-auto opacity-90;
+  }
+
+  .faq-item {
+    @apply border-l-4 border-primary rounded-[10px] mb-6 overflow-hidden bg-card;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item:hover {
+    transform: translateY(-2px);
+  }
+
+  .faq-question {
+    @apply cursor-pointer font-bold text-foreground relative;
+    padding: 18px 20px;
+    font-size: 1.15rem;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .faq-question::after {
+    content: '+';
+    @apply absolute right-5 text-primary text-2xl transition-transform duration-300;
+  }
+
+  .faq-item.active .faq-question::after {
+    content: '−';
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    @apply max-h-0 overflow-hidden bg-card text-muted-foreground;
+    padding: 0 20px;
+    transition: max-height 0.35s ease, padding 0.25s ease;
+  }
+
+  .faq-item.active .faq-answer {
+    @apply max-h-52;
+    padding: 16px 22px 22px;
+  }
+
+  .comparison-wrapper {
+    @apply bg-card rounded-xl p-8 mt-10 overflow-x-auto;
+    box-shadow: var(--shadow-card);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .comparison-table {
+    @apply w-full text-center border-collapse;
+    min-width: 720px;
+  }
+
+  .comparison-table th {
+    @apply bg-secondary text-secondary-foreground py-3 px-3 whitespace-nowrap sticky top-0 z-10;
+  }
+
+  .comparison-table td {
+    @apply py-3 px-3 border-b border-border whitespace-nowrap;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    @apply bg-muted/50;
+  }
+
+  .comparison-table th:first-child,
+  .comparison-table td:first-child {
+    @apply sticky left-0 bg-card text-left font-semibold text-foreground z-20;
+  }
+
+  .comparison-table th:nth-child(2),
+  .comparison-table td:nth-child(2) {
+    @apply bg-primary/10 text-primary font-bold border-l-[3px] border-r-[3px] border-primary;
+  }
+
+  .tick {
+    @apply text-primary font-bold text-xl;
+  }
+
+  .cross {
+    @apply text-foreground font-bold text-xl;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Sticky CTA */
+  .sticky-cta {
+    @apply fixed bottom-6 right-6 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold z-50 transition-all duration-300;
+    box-shadow: 0 4px 15px rgba(179, 25, 33, 0.4);
+  }
+
+  .sticky-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(179, 25, 33, 0.5);
+  }
+
+  @media (max-width: 640px) {
+    .sticky-cta {
+      @apply bottom-0 right-0 left-0 rounded-none text-center py-4;
+    }
+  }
+
+  /* ===== RESPONSIVE MOBILE STYLES ===== */
+  
+  /* General responsive containers */
+  @media (max-width: 768px) {
+    .container, .section, .content-wrapper {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    
+    h1, h2, h3 {
+      text-align: center;
+    }
+    
+    /* Card grids stack on mobile */
+    .card-grid,
+    .grid.md\\:grid-cols-3,
+    .grid.md\\:grid-cols-2,
+    .grid.md\\:grid-cols-4,
+    .grid.lg\\:grid-cols-4 {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+    
+    .pricing-card, .feature-card, .how-step {
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    .cta-button {
+      width: 100%;
+      max-width: 320px;
+      margin: 12px auto 0;
+    }
+    
+    /* Section padding */
+    section {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    
+    /* Icons scale down */
+    .feature-card svg,
+    .how-step svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  
+  /* Hero responsive */
+  @media (max-width: 480px) {
+    .hero-heading,
+    section h2.font-heading {
+      font-size: 32px !important;
+      line-height: 1.25 !important;
+    }
+    
+    /* Pricing badge centering */
+    .plan-badge {
+      left: 50%;
+      transform: translateX(-50%);
+      right: auto;
+    }
+  }
+  
+  /* FAQ responsive */
+  @media (max-width: 768px) {
+    .faq-item {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    .faq-question {
+      min-height: 44px;
+      padding: 14px 16px;
+      font-size: 1rem;
+    }
+    
+    .faq-answer {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+  
+  /* Images responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .carousel-slide img,
+  .carousel-image-placeholder {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Carousel */
+  .carousel-container {
+    @apply overflow-hidden rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .carousel-track {
+    @apply flex transition-transform duration-500 ease-out;
+  }
+
+  .carousel-slide {
+    @apply flex-none w-full;
+  }
+
+  .carousel-image-placeholder {
+    @apply aspect-video bg-secondary/10 rounded-lg flex items-center justify-center text-center p-8;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Video Placeholder */
+  .video-placeholder {
+    @apply aspect-video bg-muted rounded-xl flex flex-col items-center justify-center;
+    box-shadow: var(--shadow-card);
+  }
+
+  .play-icon {
+    @apply w-20 h-20 bg-card rounded-full flex items-center justify-center;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Header Logo Animation */
+  header img {
+    transition: height 0.25s ease, transform 0.25s ease;
+  }
+
+  header.scrolled img {
+    height: 84px !important;
+    transform: translateY(1px);
+  }
+
+  /* Header Navigation Text Colors */
+  header:not(.scrolled) .nav-link,
+  header:not(.scrolled) .brand-text,
+  header:not(.scrolled) .burger-icon {
+    color: #FFFFFF !important;
+  }
+
+  header.scrolled .nav-link,
+  header.scrolled .brand-text,
+  header.scrolled .burger-icon {
+    color: #FFFFFF !important;
+  }
+
+  /* Plan Badge */
+  .plan-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: hsl(var(--lexoris-red));
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  }
+}
