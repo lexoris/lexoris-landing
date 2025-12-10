@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import LexorisLogo from "@/assets/Lexoris-Logo.svg";
 import linkedinIcon from "@/assets/linkedin.png";
 import gdprIcon from "@/assets/gdprcompliant.png";
 
@@ -7,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground text-center py-12 px-5 pb-16 md:pb-12">
       <div className="mb-5">
-        <img src={LexorisLogo} alt="Lexoris Logo" className="h-24 md:h-[116px] w-auto mx-auto" />
+        <img src="/Lexoris-Logo.svg" alt="Lexoris Logo" className="h-24 md:h-[116px] w-auto mx-auto" />
       </div>
       
       <p className="font-bold mb-4 text-sm md:text-base px-4">
