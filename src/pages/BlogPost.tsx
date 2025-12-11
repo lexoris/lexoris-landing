@@ -6,20 +6,18 @@ import { Calendar, ArrowLeft } from "lucide-react";
 const blogPostsData: Record<string, { title: string; date: string; content: string }> = {
   "ai-transcription-australian-lawyers": {
     title: "AI Transcription for Australian Lawyers",
-    date: "2025-01-08",
-    content: `AI transcription has become one of the most time-saving tools available to Australian lawyers. With rising file loads and pressure to deliver matters efficiently, modern firms are moving from manual typing to AI-powered tools.
+    date: "2025-12-07",
+    content: 'AI transcription has become one of the most time-saving tools available to Australian lawyers. With rising file loads and constant pressure to deliver matters efficiently, modern firms are shifting from manual typing to AI-powered solutions.
+Unlike generic consumer transcription tools, legal transcription must handle case citations, statutory references, speaker turns, and sensitive information. Accuracy and confidentiality are critical — and that’s where purpose-built legal AI systems stand out.
 
-Legal transcription must handle citations, statutes, speaker turns and sensitive info — accuracy and confidentiality are critical.
+  AI transcription offers:
+ • Faster turnaround than traditional dictation typing
+ • Consistent formatting aligned with legal style guides
+ • Secure, encrypted processing
+ • Cost-effective workflows for sole practitioners and large chambers alike
 
-**Benefits:**
-- Faster turnaround
-- Legal formatting
-- Secure processing
-- Cost-effective workflows
-
-With post-correction engines, AI can deliver court-ready output in minutes.
-
-**Try Lexoris free for 21 days.**`,
+When paired with human-level post-correction engines, AI can deliver highly accurate, court-ready output in minutes. As the technology evolves, Australian lawyers who adopt AI transcription today gain a significant efficiency edge tomorrow.
+Start simplifying your workflow with Lexoris — Australia’s locally hosted, legally accurate transcription platform. Try it free for 21 days.'
   },
   "legal-dictation-vs-transcription": {
     title: "Legal Dictation vs Transcription: What's Faster?",
