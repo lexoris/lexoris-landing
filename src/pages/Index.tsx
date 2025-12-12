@@ -8,6 +8,7 @@ import homeCarousel from "@/assets/home-carousel.png";
 import recordingCarousel from "@/assets/recording-carousel.png";
 import downloadCarousel from "@/assets/download-carousel.png";
 import FAQSchema from "@/components/FAQSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const homepageFAQs = [
   {
@@ -50,6 +51,7 @@ const Index = () => {
   return (
     <Layout>
       <FAQSchema faqs={homepageFAQs} />
+      <BreadcrumbSchema />
       {/* Hero Section */}
       <section className="text-center pt-40 pb-32 px-5 md:px-8 bg-gradient-to-br from-lexoris-navy to-lexoris-navy-light text-primary-foreground">
         <h2 className="font-heading text-[32px] md:text-5xl font-bold mb-6 leading-[1.25] md:leading-[1.28] animate-fade-in" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.35)' }}>
