@@ -7,6 +7,30 @@ import { Shield, Server, Lock, Scale, Play } from "lucide-react";
 import homeCarousel from "@/assets/home-carousel.png";
 import recordingCarousel from "@/assets/recording-carousel.png";
 import downloadCarousel from "@/assets/download-carousel.png";
+import FAQSchema from "@/components/FAQSchema";
+
+const homepageFAQs = [
+  {
+    question: "What is Lexoris and how does it help Australian lawyers?",
+    answer: "Lexoris is an AI-powered legal transcription platform built exclusively for Australian legal professionals. It converts audio recordings into accurate, court-ready transcripts with legal terminology precision, all processed on Australian servers for complete data sovereignty.",
+  },
+  {
+    question: "Is Lexoris transcription hosted in Australia?",
+    answer: "Yes, Lexoris is 100% Australian-hosted. All audio files and transcripts are processed and stored exclusively on Australian servers, ensuring compliance with Australian privacy laws and professional obligations.",
+  },
+  {
+    question: "How accurate is AI legal transcription for barristers and solicitors?",
+    answer: "Lexoris uses AI specifically trained for Australian legal terminology, including case citations, statutory references, and court procedures. Combined with post-correction engines, it delivers highly accurate transcripts suitable for legal documentation.",
+  },
+  {
+    question: "Is my legal dictation kept confidential with Lexoris?",
+    answer: "Absolutely. Lexoris uses AES-256 encryption for all uploads and processing. Files are automatically deleted after download, and your data is never used for AI training, maintaining complete client confidentiality.",
+  },
+  {
+    question: "Can I use Lexoris for secure dictation as a barrister?",
+    answer: "Yes, Lexoris supports both dictation and transcription workflows. Barristers can dictate notes, record conferences, and transcribe mediations—all processed securely within Australia with automatic deletion after download.",
+  },
+];
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -25,6 +49,7 @@ const Index = () => {
 
   return (
     <Layout>
+      <FAQSchema faqs={homepageFAQs} />
       {/* Hero Section */}
       <section className="text-center pt-40 pb-32 px-5 md:px-8 bg-gradient-to-br from-lexoris-navy to-lexoris-navy-light text-primary-foreground">
         <h2 className="font-heading text-[32px] md:text-5xl font-bold mb-6 leading-[1.25] md:leading-[1.28] animate-fade-in" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.35)' }}>
