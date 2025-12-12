@@ -3,6 +3,34 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/hooks/use-scroll-animation";
+import FAQSchema from "@/components/FAQSchema";
+
+const faqPageFAQs = [
+  {
+    question: "What is the best AI transcription tool for Australian law firms?",
+    answer: "Lexoris is purpose-built for Australian legal professionals, offering AI-powered transcription with Australian data residency, legal terminology accuracy, and automatic file deletion for maximum confidentiality.",
+  },
+  {
+    question: "How does secure transcription for lawyers differ from consumer tools?",
+    answer: "Secure legal transcription requires Australian-hosted servers, AES-256 encryption, no data retention, and strict non-training policies. Consumer tools often store data overseas and use files for AI training, creating confidentiality risks.",
+  },
+  {
+    question: "Can barristers use Lexoris for conference transcription?",
+    answer: "Yes, Lexoris is ideal for barristers needing fast, confidential transcription of conferences, mediations, and dictation. All processing occurs on Australian servers with automatic deletion after download.",
+  },
+  {
+    question: "Is Australian hosted legal tech safer than overseas alternatives?",
+    answer: "Yes. Australian-hosted platforms like Lexoris ensure your data stays within Australian jurisdiction, compliant with the Privacy Act and safe from foreign disclosure laws that may apply to overseas servers.",
+  },
+  {
+    question: "What audio formats does Lexoris support for legal transcription?",
+    answer: "Lexoris supports MP3 and WAV audio formats, covering the most common recording formats used by legal professionals, dictation devices, and smartphone recordings.",
+  },
+  {
+    question: "How does Lexoris ensure privacy-compliant transcription?",
+    answer: "Lexoris uses 100% Australian servers, AES-256 encryption, automatic file deletion, and a strict non-training policy. Your transcripts and audio are never stored or used beyond your immediate transcription needs.",
+  },
+];
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -33,6 +61,7 @@ const FAQ = () => {
 
   return (
     <Layout>
+      <FAQSchema faqs={faqPageFAQs} />
       <AnimatedSection className="pt-40 pb-24 px-5 bg-background">
         <div className="max-w-3xl mx-auto">
           <h1 className="section-title">FAQ</h1>
