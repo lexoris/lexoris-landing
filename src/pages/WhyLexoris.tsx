@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/hooks/use-scroll-animation";
 import { Server, Scale, Layers, Clock, Shield, Users } from "lucide-react";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const WhyLexoris = () => {
   const features = [
@@ -51,6 +52,7 @@ const WhyLexoris = () => {
 
   return (
     <Layout>
+      <BreadcrumbSchema />
       <AnimatedSection className="pt-40 pb-24 px-5 bg-background">
         <div className="max-w-6xl mx-auto">
           <h1 className="section-title">Why Lexoris?</h1>
