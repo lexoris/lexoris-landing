@@ -2,6 +2,26 @@ import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { AnimatedSection } from "@/hooks/use-scroll-animation";
 import { Calendar, ArrowLeft } from "lucide-react";
+import FAQSchema from "@/components/FAQSchema";
+
+const blogFAQs = [
+  {
+    question: "Why should Australian lawyers use AI transcription?",
+    answer: "AI transcription saves Australian lawyers significant time by converting audio recordings into accurate text in minutes. Purpose-built legal AI handles case citations, statutory references, and legal terminology with high precision.",
+  },
+  {
+    question: "Is AI transcription secure enough for legal practice?",
+    answer: "Yes, when using platforms like Lexoris with Australian-hosted servers, AES-256 encryption, automatic file deletion, and strict non-training policies. Consumer-grade tools are not recommended for sensitive legal content.",
+  },
+  {
+    question: "How does legal transcription maintain client confidentiality?",
+    answer: "Secure legal transcription maintains confidentiality through Australian data residency, end-to-end encryption, zero data retention policies, and guarantees that files are never used for AI model training.",
+  },
+  {
+    question: "What are the benefits of Australian-hosted transcription for lawyers?",
+    answer: "Australian-hosted transcription ensures compliance with the Privacy Act, eliminates cross-border data risks, meets client expectations for data sovereignty, and protects against foreign jurisdiction disclosure requirements.",
+  },
+];
 
 const blogPostsData: Record<string, { title: string; date: string; content: string }> = {
   "ai-transcription-australian-lawyers": {
@@ -179,6 +199,7 @@ const BlogPost = () => {
 
   return (
     <Layout>
+      <FAQSchema faqs={blogFAQs} />
       {/* Hero Section */}
       <section className="text-center pt-40 pb-16 px-5 md:px-8 bg-gradient-to-br from-lexoris-navy to-lexoris-navy-light text-primary-foreground">
         <div className="max-w-3xl mx-auto">
