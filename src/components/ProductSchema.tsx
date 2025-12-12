@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-interface Product {
+interface Service {
   name: string;
   description: string;
   price?: number;
@@ -8,42 +8,38 @@ interface Product {
   availability: string;
 }
 
-interface ProductSchemaProps {
-  products: Product[];
+interface ServiceSchemaProps {
+  services: Service[];
 }
 
-const ProductSchema = ({ products }: ProductSchemaProps) => {
+const ProductSchema = ({ services }: ServiceSchemaProps) => {
   useEffect(() => {
     const script = document.createElement("script");
     script.type = "application/ld+json";
-    script.id = "product-schema";
+    script.id = "service-schema";
     script.text = JSON.stringify(
-      products.map((product) => ({
+      services.map((service) => ({
         "@context": "https://schema.org",
-        "@type": "Product",
-        name: product.name,
-        description: product.description,
-        brand: {
-          "@type": "Brand",
+        "@type": "Service",
+        name: service.name,
+        description: service.description,
+        provider: {
+          "@type": "Organization",
           name: "Lexoris",
         },
         offers: {
           "@type": "Offer",
-          ...(product.price !== undefined && {
-            price: product.price,
-            priceCurrency: product.priceCurrency || "AUD",
+          ...(service.price !== undefined && {
+            price: service.price,
+            priceCurrency: service.priceCurrency || "AUD",
           }),
-          availability: `https://schema.org/${product.availability}`,
-          seller: {
-            "@type": "Organization",
-            name: "Lexoris",
-          },
+          availability: `https://schema.org/${service.availability}`,
         },
       }))
     );
 
     // Remove existing schema if present
-    const existing = document.getElementById("product-schema");
+    const existing = document.getElementById("service-schema");
     if (existing) {
       existing.remove();
     }
@@ -51,12 +47,12 @@ const ProductSchema = ({ products }: ProductSchemaProps) => {
     document.head.appendChild(script);
 
     return () => {
-      const el = document.getElementById("product-schema");
+      const el = document.getElementById("service-schema");
       if (el) {
         el.remove();
       }
     };
-  }, [products]);
+  }, [services]);
 
   return null;
 };
