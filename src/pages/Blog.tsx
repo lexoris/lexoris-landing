@@ -2,20 +2,21 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { AnimatedSection } from "@/hooks/use-scroll-animation";
 import { Calendar } from "lucide-react";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const Blog = () => {
   const blogPosts = [
     {
       id: 1,
       title: "AI Transcription for Australian Lawyers",
-      date: "2025-12-7",
+      date: "2025-11-10",
       excerpt: "AI transcription has become one of the most time-saving tools available to Australian lawyers. With rising file loads and pressure to deliver matters efficiently, modern firms are moving from manual typing to AI-powered tools.",
       slug: "ai-transcription-australian-lawyers",
     },
     {
       id: 2,
       title: "Legal Dictation vs Transcription: What's Faster?",
-      date: "2025-12-1",
+      date: "2025-11-15",
       excerpt: "Dictation is fastest for quick notes, emails, file instructions and hands-free drafting. Transcription is fastest for interviews, conferences, mediations and court-ready summaries.",
       slug: "legal-dictation-vs-transcription",
     },
@@ -29,14 +30,14 @@ const Blog = () => {
     {
       id: 4,
       title: "Why Australian Data Residency Matters",
-      date: "2025-11-15",
+      date: "2025-12-01",
       excerpt: "Data location affects compliance, Privacy Act obligations, client expectations, and risk. Australian hosting eliminates cross-border issues and foreign jurisdiction exposure.",
       slug: "australian-data-residency",
     },
     {
       id: 5,
       title: "Best Tools for Barristers in 2025",
-      date: "2025-11-10",
+      date: "2025-12-07",
       excerpt: "Key tools: AI legal transcription, digital brief/bundle software, encrypted messaging, automated time tracking, AI legal research.",
       slug: "best-tools-barristers-2025",
     },
@@ -53,6 +54,7 @@ const Blog = () => {
 
   return (
     <Layout>
+      <BreadcrumbSchema />
       {/* Hero Section */}
       <section className="text-center pt-40 pb-16 px-5 md:px-8 bg-gradient-to-br from-lexoris-navy to-lexoris-navy-light text-primary-foreground">
         <h1 className="font-heading text-[32px] md:text-5xl font-bold mb-4 leading-[1.25] md:leading-[1.28] animate-fade-in" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.35)' }}>
