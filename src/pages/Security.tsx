@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { AnimatedSection } from "@/hooks/use-scroll-animation";
 import { Shield, Lock, Server, Scale } from "lucide-react";
 import FAQSchema from "@/components/FAQSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const securityFAQs = [
   {
@@ -34,6 +35,7 @@ const Security = () => {
   return (
     <Layout>
       <FAQSchema faqs={securityFAQs} />
+      <BreadcrumbSchema />
       <AnimatedSection className="pt-40 pb-24 px-5 bg-background">
         <div className="max-w-6xl mx-auto">
           <h1 className="section-title">Security & Compliance</h1>
