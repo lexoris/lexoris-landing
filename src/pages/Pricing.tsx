@@ -9,7 +9,7 @@ import FAQSchema from "@/components/FAQSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import ProductSchema from "@/components/ProductSchema";
 
-const pricingProducts = [
+const pricingServices = [
   {
     name: "Lexoris Free Trial",
     description: "21-day trial with 60 minutes of Australian-hosted legal transcription included",
@@ -87,7 +87,7 @@ const Pricing = () => {
     <Layout>
       <FAQSchema faqs={pricingFAQs} />
       <BreadcrumbSchema />
-      <ProductSchema products={pricingProducts} />
+      <ProductSchema services={pricingServices} />
       <AnimatedSection className="pt-40 pb-24 px-5 bg-background">
         <div className="max-w-5xl mx-auto">
           <h1 className="section-title">Pricing</h1>
