@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/hooks/use-scroll-animation";
 import { Volume2, Activity, FileText } from "lucide-react";
 import FAQSchema from "@/components/FAQSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const howItWorksFAQs = [
   {
@@ -54,6 +55,7 @@ const HowItWorks = () => {
   return (
     <Layout>
       <FAQSchema faqs={howItWorksFAQs} />
+      <BreadcrumbSchema />
       <AnimatedSection className="pt-40 pb-24 px-5 bg-background">
         <div className="max-w-3xl mx-auto">
           <h1 className="section-title">How It Works</h1>
