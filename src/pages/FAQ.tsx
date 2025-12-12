@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/hooks/use-scroll-animation";
 import FAQSchema from "@/components/FAQSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const faqPageFAQs = [
   {
@@ -62,6 +63,7 @@ const FAQ = () => {
   return (
     <Layout>
       <FAQSchema faqs={faqPageFAQs} />
+      <BreadcrumbSchema />
       <AnimatedSection className="pt-40 pb-24 px-5 bg-background">
         <div className="max-w-3xl mx-auto">
           <h1 className="section-title">FAQ</h1>
