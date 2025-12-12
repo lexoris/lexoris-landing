@@ -6,6 +6,37 @@ import freeLogo from "@/assets/free-logo.png";
 import standardLogo from "@/assets/standard-logo.png";
 import professionalLogo from "@/assets/professional-logo.png";
 import FAQSchema from "@/components/FAQSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ProductSchema from "@/components/ProductSchema";
+
+const pricingProducts = [
+  {
+    name: "Lexoris Free Trial",
+    description: "21-day trial with 60 minutes of Australian-hosted legal transcription included",
+    price: 0,
+    priceCurrency: "AUD",
+    availability: "InStock",
+  },
+  {
+    name: "Lexoris Standard Plan",
+    description: "100 minutes per month of secure, Australian-hosted legal transcription",
+    price: 29,
+    priceCurrency: "AUD",
+    availability: "InStock",
+  },
+  {
+    name: "Lexoris Professional Plan",
+    description: "300 minutes per month of secure, Australian-hosted legal transcription",
+    price: 49,
+    priceCurrency: "AUD",
+    availability: "InStock",
+  },
+  {
+    name: "Lexoris Enterprise Plan",
+    description: "High-volume custom legal transcription solution for large firms and chambers",
+    availability: "InStock",
+  },
+];
 
 const pricingFAQs = [
   {
@@ -55,6 +86,8 @@ const Pricing = () => {
   return (
     <Layout>
       <FAQSchema faqs={pricingFAQs} />
+      <BreadcrumbSchema />
+      <ProductSchema products={pricingProducts} />
       <AnimatedSection className="pt-40 pb-24 px-5 bg-background">
         <div className="max-w-5xl mx-auto">
           <h1 className="section-title">Pricing</h1>
