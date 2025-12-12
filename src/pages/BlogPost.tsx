@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import { AnimatedSection } from "@/hooks/use-scroll-animation";
 import { Calendar, ArrowLeft } from "lucide-react";
 import FAQSchema from "@/components/FAQSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const blogFAQs = [
   {
@@ -197,9 +198,16 @@ const BlogPost = () => {
     );
   }
 
+  const breadcrumbItems = [
+    { name: "Home", url: "https://lexoris.com.au" },
+    { name: "Blog", url: "https://lexoris.com.au/blog" },
+    { name: post.title, url: `https://lexoris.com.au/blog/${slug}` },
+  ];
+
   return (
     <Layout>
       <FAQSchema faqs={blogFAQs} />
+      <BreadcrumbSchema customItems={breadcrumbItems} />
       {/* Hero Section */}
       <section className="text-center pt-40 pb-16 px-5 md:px-8 bg-gradient-to-br from-lexoris-navy to-lexoris-navy-light text-primary-foreground">
         <div className="max-w-3xl mx-auto">
