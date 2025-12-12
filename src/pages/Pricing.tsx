@@ -5,6 +5,30 @@ import { AnimatedSection } from "@/hooks/use-scroll-animation";
 import freeLogo from "@/assets/free-logo.png";
 import standardLogo from "@/assets/standard-logo.png";
 import professionalLogo from "@/assets/professional-logo.png";
+import FAQSchema from "@/components/FAQSchema";
+
+const pricingFAQs = [
+  {
+    question: "How much does Lexoris legal transcription cost?",
+    answer: "Lexoris offers a free 21-day trial with 60 minutes included. Paid plans start at $29 for 100 minutes (Standard) and $49 for 300 minutes (Professional). Overage is charged at $0.25 per minute with no setup fees.",
+  },
+  {
+    question: "Can I cancel my Lexoris subscription anytime?",
+    answer: "Yes, you can cancel your Lexoris subscription at any time with no cancellation fees. Your account will remain active until the end of your current billing period.",
+  },
+  {
+    question: "What happens if I exceed my transcription minutes?",
+    answer: "If you exceed your plan's included minutes, additional usage is billed at $0.25 per minute. There are no surprise charges—overage is clearly tracked in your account dashboard.",
+  },
+  {
+    question: "Is my data secure on paid Lexoris plans?",
+    answer: "All Lexoris plans, including the free trial, use the same enterprise-grade security: AES-256 encryption, Australian-only servers, automatic file deletion, and strict non-training guarantees for your data.",
+  },
+  {
+    question: "Which Lexoris plan is best for sole practitioners?",
+    answer: "The Standard plan at $29 for 100 minutes is ideal for sole practitioners with moderate transcription needs. For higher volume practices, the Professional plan offers better value at $49 for 300 minutes.",
+  },
+];
 
 const Pricing = () => {
   const plans = [
@@ -30,6 +54,7 @@ const Pricing = () => {
 
   return (
     <Layout>
+      <FAQSchema faqs={pricingFAQs} />
       <AnimatedSection className="pt-40 pb-24 px-5 bg-background">
         <div className="max-w-5xl mx-auto">
           <h1 className="section-title">Pricing</h1>
