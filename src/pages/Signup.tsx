@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { AnimatedSection } from "@/hooks/use-scroll-animation";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -58,6 +59,7 @@ const Signup = () => {
 
   return (
     <Layout>
+      <BreadcrumbSchema />
       <AnimatedSection className="py-24 px-5 bg-background">
         <div className="max-w-md mx-auto">
           <h1 className="section-title">Start Your Free Trial</h1>
