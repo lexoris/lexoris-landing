@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import { Linkedin, Instagram, Facebook, ShieldCheck } from "lucide-react";
 import LexorisLogo from "@/assets/Lexoris-Logo.svg";
-import linkedinIcon from "@/assets/linkedin.png";
-import gdprIcon from "@/assets/gdprcompliant.png";
 
 const Footer = () => {
+  const iconClass = "w-5 h-5 stroke-[1.5]";
+  const linkClass = "text-[#FAFAFA] hover:text-[#B31921] transition-colors";
+
   return (
     <footer className="bg-secondary text-secondary-foreground text-center py-12 px-5 pb-16 md:pb-12">
       <div className="mb-5">
@@ -28,16 +30,37 @@ const Footer = () => {
         </Link>
       </div>
       
-      <div className="flex justify-center gap-3 my-4">
+      <div className="flex justify-center gap-4 my-4 items-center">
         <a
           href="https://www.linkedin.com/company/lexoris"
           target="_blank"
           rel="noopener noreferrer"
-          className="opacity-90 hover:opacity-100 transition-opacity"
+          aria-label="Lexoris LinkedIn"
+          className={linkClass}
         >
-          <img src={linkedinIcon} alt="LinkedIn" className="w-7 h-7 rounded" />
+          <Linkedin className={iconClass} />
         </a>
-        <img src={gdprIcon} alt="GDPR Compliant" className="w-7 h-7 rounded" />
+        <a
+          href="https://www.instagram.com/lexorisau/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Lexoris Instagram"
+          className={linkClass}
+        >
+          <Instagram className={iconClass} />
+        </a>
+        <a
+          href="https://www.facebook.com/people/Lexoris/61585192140109/?mibextid=LQQJ4d&rdid=OtdmUYgT9ngtZGXz&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16qoLKmYB3%2F%3Fmibextid%3DLQQJ4d"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Lexoris Facebook"
+          className={linkClass}
+        >
+          <Facebook className={iconClass} />
+        </a>
+        <Link to="/security" aria-label="Security & Compliance" className={linkClass}>
+          <ShieldCheck className={iconClass} />
+        </Link>
       </div>
       
       <p className="text-primary font-semibold">
