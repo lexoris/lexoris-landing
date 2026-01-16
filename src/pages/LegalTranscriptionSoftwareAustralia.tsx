@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Scale, Users, Shield, Server, Clock, Sparkles } from "lucide-react";
-import { DEMO_BOOKING_URL, DEMO_BOOKING_LABEL, DEMO_BOOKING_ARIA_LABEL } from "@/lib/constants";
+import { DEMO_BOOKING_URL, DEMO_BOOKING_LABEL, DEMO_BOOKING_ARIA_LABEL } from "@/lib/constants.ts";
 
 const LegalTranscriptionSoftwareAustralia = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
