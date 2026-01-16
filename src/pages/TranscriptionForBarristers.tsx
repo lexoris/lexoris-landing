@@ -171,14 +171,14 @@ const TranscriptionForBarristers = () => {
           </div>
 
           {/* See Lexoris in Action */}
-          <div className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-4 text-center">See Lexoris in Action</h2>
+          <div className="mb-8 text-center">
+            <h2 className="text-2xl font-semibold text-foreground mb-4">See Lexoris in Action</h2>
             
             <p className="text-muted-foreground mb-8">
               The best way to understand whether Lexoris fits your practice is to see it in use.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row gap-4 mb-6 justify-center">
               <Button asChild size="lg">
                 <a 
                   href={DEMO_BOOKING_URL} 
