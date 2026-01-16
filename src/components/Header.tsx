@@ -24,7 +24,7 @@ const Header = () => {
     { href: "/why-lexoris", label: "Why Lexoris?" },
     { href: "/security", label: "Security" },
     { href: "/pricing", label: "Pricing" },
-    { href: "/blog", label: "Blog" },
+    { href: "/blog", label: "Insights" },
     { href: "/faq", label: "FAQ" },
   ];
 
