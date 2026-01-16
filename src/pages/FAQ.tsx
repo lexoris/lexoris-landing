@@ -8,28 +8,40 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const faqPageFAQs = [
   {
-    question: "What is the best AI transcription tool for Australian law firms?",
-    answer: "Lexoris is purpose-built for Australian legal professionals, offering AI-powered transcription with Australian data residency, legal terminology accuracy, and automatic file deletion for maximum confidentiality.",
+    question: "What makes Lexoris different from other transcription tools?",
+    answer: "Lexoris is built specifically for legal and professional use. Beyond transcription, it focuses on accuracy, structured formatting, citation visibility, and review safeguards — making it suitable for legal environments where detail, accountability, and clarity matter.",
   },
   {
-    question: "How does secure transcription for lawyers differ from consumer tools?",
-    answer: "Secure legal transcription requires Australian-hosted servers, AES-256 encryption, no data retention, and strict non-training policies. Consumer tools often store data overseas and use files for AI training, creating confidentiality risks.",
+    question: "Is Lexoris accurate enough for legal or professional work?",
+    answer: "Yes. Lexoris combines advanced speech recognition with structured post-processing to improve accuracy. All transcripts are designed to be reviewed before use, supporting professional standards rather than replacing them.",
   },
   {
-    question: "Can barristers use Lexoris for conference transcription?",
-    answer: "Yes, Lexoris is ideal for barristers needing fast, confidential transcription of conferences, mediations, and dictation. All processing occurs on Australian servers with automatic deletion after download.",
+    question: "Can Lexoris handle multiple speakers?",
+    answer: "Yes. Lexoris supports both single-speaker and multi-speaker recordings, with automatic speaker detection and clear separation in the transcript.",
   },
   {
-    question: "Is Australian hosted legal tech safer than overseas alternatives?",
-    answer: "Yes. Australian-hosted platforms like Lexoris ensure your data stays within Australian jurisdiction, compliant with the Privacy Act and safe from foreign disclosure laws that may apply to overseas servers.",
+    question: "How does Lexoris handle citations?",
+    answer: "Citations are formatted in AGLC style and clearly highlighted in every transcript. Each transcript also includes a reminder to review all highlighted citations for accuracy before use, reinforcing best practice and professional responsibility.",
   },
   {
-    question: "What audio formats does Lexoris support for legal transcription?",
-    answer: "Lexoris supports MP3 and WAV audio formats, covering the most common recording formats used by legal professionals, dictation devices, and smartphone recordings.",
+    question: "Is my data secure?",
+    answer: "Yes. Lexoris follows a privacy-first, data-minimisation approach. Once your transcript and audio file are downloaded, they are automatically deleted. Data is not retained longer than necessary. Lexoris is exclusively hosted on Australian servers and is aligned with GDPR principles.",
   },
   {
-    question: "How does Lexoris ensure privacy-compliant transcription?",
-    answer: "Lexoris uses 100% Australian servers, AES-256 encryption, automatic file deletion, and a strict non-training policy. Your transcripts and audio are never stored or used beyond your immediate transcription needs.",
+    question: "Is Lexoris difficult to use?",
+    answer: "No. Lexoris is intentionally simple. You can record or upload audio, allow it to process, and download your transcript — no setup, no training, and no configuration required. Optional 10-minute onboarding video calls are available for users who prefer guided support.",
+  },
+  {
+    question: "Can Lexoris fit into existing legal workflows?",
+    answer: "Yes. Lexoris is designed to support existing workflows, not replace them. Most users treat it as a first-pass transcript that removes hours of manual work while retaining full review and control. Lexoris is browser-based and compatible with both desktop and mobile devices.",
+  },
+  {
+    question: "Why should I use Lexoris instead of a free transcription tool?",
+    answer: "Free tools are built for general use. Lexoris is built specifically for the Australian legal profession, where accuracy, structure, and review prompts matter. In legal and formal settings, quality and defensibility are more important than speed alone.",
+  },
+  {
+    question: "Who is Lexoris for?",
+    answer: "Lexoris is designed for Australian legal professionals and organisations that require accurate, structured transcription with clear accountability — including barristers, solicitors, consultants, students, and researchers.",
   },
 ];
 
@@ -39,20 +51,40 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "Is my data stored in Australia?",
-      answer: "Yes — hosted exclusively on Australian servers, maintaining confidentiality compliance.",
+      question: "What makes Lexoris different from other transcription tools?",
+      answer: "Lexoris is built specifically for legal and professional use. Beyond transcription, it focuses on accuracy, structured formatting, citation visibility, and review safeguards — making it suitable for legal environments where detail, accountability, and clarity matter.",
     },
     {
-      question: "Do you use my transcripts for training?",
-      answer: "Never — your data remains private and encrypted, and never trains AI models.",
+      question: "Is Lexoris accurate enough for legal or professional work?",
+      answer: "Yes. Lexoris combines advanced speech recognition with structured post-processing to improve accuracy. All transcripts are designed to be reviewed before use, supporting professional standards rather than replacing them.",
     },
     {
-      question: "Do you store my data?",
-      answer: "No — once you've downloaded your transcript, all data is deleted.",
+      question: "Can Lexoris handle multiple speakers?",
+      answer: "Yes. Lexoris supports both single-speaker and multi-speaker recordings, with automatic speaker detection and clear separation in the transcript.",
     },
     {
-      question: "What file formats can I upload?",
-      answer: "MP3 and WAV are supported.",
+      question: "How does Lexoris handle citations?",
+      answer: "Citations are formatted in AGLC style and clearly highlighted in every transcript. Each transcript also includes a reminder to review all highlighted citations for accuracy before use, reinforcing best practice and professional responsibility.",
+    },
+    {
+      question: "Is my data secure?",
+      answer: "Yes. Lexoris follows a privacy-first, data-minimisation approach. Once your transcript and audio file are downloaded, they are automatically deleted. Data is not retained longer than necessary. Lexoris is exclusively hosted on Australian servers and is aligned with GDPR principles.",
+    },
+    {
+      question: "Is Lexoris difficult to use?",
+      answer: "No. Lexoris is intentionally simple. You can record or upload audio, allow it to process, and download your transcript — no setup, no training, and no configuration required. Optional 10-minute onboarding video calls are available for users who prefer guided support.",
+    },
+    {
+      question: "Can Lexoris fit into existing legal workflows?",
+      answer: "Yes. Lexoris is designed to support existing workflows, not replace them. Most users treat it as a first-pass transcript that removes hours of manual work while retaining full review and control. Lexoris is browser-based and compatible with both desktop and mobile devices.",
+    },
+    {
+      question: "Why should I use Lexoris instead of a free transcription tool?",
+      answer: "Free tools are built for general use. Lexoris is built specifically for the Australian legal profession, where accuracy, structure, and review prompts matter. In legal and formal settings, quality and defensibility are more important than speed alone.",
+    },
+    {
+      question: "Who is Lexoris for?",
+      answer: "Lexoris is designed for Australian legal professionals and organisations that require accurate, structured transcription with clear accountability — including barristers, solicitors, consultants, students, and researchers.",
     },
   ];
 
