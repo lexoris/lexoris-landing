@@ -16,6 +16,16 @@ const Footer = () => {
         Locally Hosted. Legally Accurate. Transcription You Can Trust.
       </p>
       
+      <p className="mb-4 text-sm md:text-base px-4">
+        <Link to="/legal-transcription-software-australia" className="hover:text-primary transition-colors">Legal Transcription Software (Australia)</Link>
+        {" · "}
+        <Link to="/transcription-for-barristers" className="hover:text-primary transition-colors">Transcription for Barristers</Link>
+        {" · "}
+        <Link to="/legal-dictation-software" className="hover:text-primary transition-colors">Legal Dictation Software</Link>
+        {" · "}
+        <Link to="/secure-legal-transcription" className="hover:text-primary transition-colors">Secure Legal Transcription</Link>
+      </p>
+      
       <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-0 mb-4">
         <a href="/terms.html" className="hover:text-primary transition-colors px-2 py-1">
           Terms of Use
