@@ -13,6 +13,10 @@ import Security from "./pages/Security";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
+import LegalTranscriptionSoftwareAustralia from "./pages/LegalTranscriptionSoftwareAustralia";
+import TranscriptionForBarristers from "./pages/TranscriptionForBarristers";
+import LegalDictationSoftware from "./pages/LegalDictationSoftware";
+import SecureLegalTranscription from "./pages/SecureLegalTranscription";
 
 const queryClient = new QueryClient();
 
@@ -32,11 +36,17 @@ const App = () => (
           <Route path="/security" element={<Security />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/legal-transcription-software-australia" element={<LegalTranscriptionSoftwareAustralia />} />
+          <Route path="/transcription-for-barristers" element={<TranscriptionForBarristers />} />
+          <Route path="/legal-dictation-software" element={<LegalDictationSoftware />} />
+          <Route path="/secure-legal-transcription" element={<SecureLegalTranscription />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
+
+export default App;
 
 export default App;
