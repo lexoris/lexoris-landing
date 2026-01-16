@@ -1,15 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://lexoris.com.au/</loc>
-    <priority>1.00</priority>
   </url>
+
   <url>
-    <loc>https://lexoris.com.au/terms.html</loc>
-    <priority>0.80</priority>
+    <loc>https://lexoris.com.au/how-it-works</loc>
   </url>
+
   <url>
-    <loc>https://lexoris.com.au/privacy.html</loc>
-    <priority>0.80</priority>
+    <loc>https://lexoris.com.au/why-lexoris</loc>
   </url>
+
+  <url>
+    <loc>https://lexoris.com.au/pricing</loc>
+  </url>
+
+  <url>
+    <loc>https://lexoris.com.au/faq</loc>
+  </url>
+
+  <url>
+    <loc>https://lexoris.com.au/security</loc>
+  </url>
+
+  <url>
+    <loc>https://lexoris.com.au/signup</loc>
+  </url>
+
+  <url>
+    <loc>https://lexoris.com.au/blog</loc>
+  </url>
+
+  <!-- SEO-lite footer pages -->
+  <url>
+    <loc>https://lexoris.com.au/legal-transcription-software-australia</loc>
+  </url>
+
+  <url>
+    <loc>https://lexoris.com.au/transcription-for-barristers</loc>
+  </url>
+
+  <url>
+    <loc>https://lexoris.com.au/legal-dictation-software</loc>
+  </url>
+
+  <url>
+    <loc>https://lexoris.com.au/secure-legal-transcription</loc>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://lexoris.com.au/privacy</loc>
+  </url>
+
+  <url>
+    <loc>https://lexoris.com.au/terms</loc>
+  </url>
+
 </urlset>
