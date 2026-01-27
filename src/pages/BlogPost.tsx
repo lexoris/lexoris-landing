@@ -123,7 +123,7 @@ Encrypted chat and document-sharing reduce reliance on email while maintaining p
 **4. Automated Time Tracking**
 Hands-free tracking ensures accurate billing without interrupting workflow.
 
-**5. Research Assistants Powered by AI**
+**5. Research Assistance Powered by AI**
 Used properly, AI research tools help identify issues, cases and authorities faster — especially when paired with professional judgment.
 
 By adopting the right technology stack, barristers can significantly reduce administrative time and focus on what matters most: preparation, persuasion and advocacy.
