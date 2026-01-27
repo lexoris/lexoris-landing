@@ -58,10 +58,10 @@ const Blog = () => {
       {/* Hero Section */}
       <section className="text-center pt-40 pb-16 px-5 md:px-8 bg-gradient-to-br from-lexoris-navy to-lexoris-navy-light text-primary-foreground">
         <h1 className="font-heading text-[32px] md:text-5xl font-bold mb-4 leading-[1.25] md:leading-[1.28] animate-fade-in" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.35)' }}>
-          Blog
+          Insights
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-90 animate-fade-in px-4" style={{ animationDelay: '0.1s' }}>
-          Insights, updates, and resources for legal professionals.
+          Awareness, updates, and resources for legal professionals.
         </p>
       </section>
 
