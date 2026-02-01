@@ -44,7 +44,7 @@ const Security = () => {
             Lexoris is built for Australian legal practice. Your data is exclusively hosted on Australian servers, is encrypted end-to-end, and is never used for AI training.
           </p>
           <p className="text-center max-w-3xl mx-auto mb-16 text-lg text-muted-foreground">
-            Our data handling and privacy practices are aligned with GDPR principles and the Australian Privacy Act.
+            Our data handling and privacy practices are aligned with GDPR principles and the Australian Privacy Principles.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
