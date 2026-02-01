@@ -42,8 +42,8 @@ const WhyLexoris = () => {
   const comparisonData = [
     { feature: "Australian Legal Vocabulary", lexoris: true, otter: false, dragon: true, microsoft: false },
     { feature: "Australian Servers & Data Residency", lexoris: true, otter: false, dragon: true, microsoft: false },
-    { feature: "Your Data Is Not Stored", lexoris: true, otter: false, dragon: false, microsoft: false },
-    { feature: "Post-Correction for Errors", lexoris: true, otter: false, dragon: false, microsoft: false },
+    { feature: "No Data Retention", lexoris: true, otter: false, dragon: false, microsoft: false },
+    { feature: "Post Correction With AGLC Citations", lexoris: true, otter: false, dragon: false, microsoft: false },
     { feature: "Flexible Pricing (No Lock-In Contracts)", lexoris: true, otter: true, dragon: false, microsoft: false },
     { feature: "Microsoft & Apple Device Compatibility", lexoris: true, otter: true, dragon: false, microsoft: true },
     { feature: "Intuitive Usability", lexoris: true, otter: false, dragon: false, microsoft: false },
