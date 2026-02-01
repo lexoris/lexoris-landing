@@ -120,7 +120,7 @@ const Index = () => {
             <Scale className="w-10 h-10 text-lexoris-red mx-auto mb-4" />
             <h4 className="font-heading text-xl font-bold text-foreground mb-3">AI Legal Accuracy</h4>
             <p className="text-muted-foreground leading-relaxed">
-              Trained for Australian legal terminology for precise transcripts.
+              Trained for Australian legal terminology for precise transcripts. Post-correction enhances transcripts through structured formatting, AGLC-style citations, and language accuracy.
             </p>
           </div>
           <div className="feature-card text-center">
