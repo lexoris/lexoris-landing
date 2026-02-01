@@ -33,7 +33,7 @@ const TranscriptionForBarristers = () => {
 
   return (
     <Layout>
-      <section className="pt-32 pb-20 px-5">
+      <section className="pt-42 pb-20 px-5">
         <div className="max-w-4xl mx-auto">
           <h1 className="section-title mb-8">Built for Barristers Who Rely on Dictation</h1>
           
