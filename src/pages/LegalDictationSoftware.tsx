@@ -28,7 +28,7 @@ const LegalDictationSoftware = () => {
 
   return (
     <Layout>
-      <section className="pt-32 pb-20 px-5">
+      <section className="pt-42 pb-20 px-5">
         <div className="max-w-4xl mx-auto">
           {/* H1 */}
           <h1 className="section-title mb-8">Legal Dictation Software for Law Firms</h1>
