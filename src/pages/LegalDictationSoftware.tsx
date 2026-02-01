@@ -70,7 +70,7 @@ const LegalDictationSoftware = () => {
                   Step 1: Record or Upload
                 </h3>
                 <p className="text-muted-foreground text-lg">
-                  Record directly in Lexoris or upload your existing audio file securely. All files are encrypted in transit and handled in line with professional confidentiality obligations.
+                  Record directly in Lexoris or upload your existing audio file securely. All files are encrypted in transit to align with professional confidentiality obligations.
                 </p>
               </div>
               
@@ -82,7 +82,7 @@ const LegalDictationSoftware = () => {
                   Step 2: AI Transcribes and Post-Processes
                 </h3>
                 <p className="text-muted-foreground text-lg">
-                  Lexoris transcribes your audio using advanced AI that is post-processed for Australian legal terminology, formal legal writing styles, and structured readability. Where applicable, transcripts support single-speaker and multi-speaker formats and apply AGLC-aligned citation formatting.
+                  Lexoris transcribes your audio using advanced AI that is post-processed for Australian legal terminology, formal legal writing styles, and structured readability. Transcripts support single-speaker and multi-speaker formats and apply AGLC-aligned citation formatting.
                 </p>
               </div>
               
