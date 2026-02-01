@@ -9,11 +9,11 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 const faqPageFAQs = [
   {
     question: "What makes Lexoris different from other transcription tools?",
-    answer: "Lexoris is built specifically for legal and professional use. Beyond transcription, it focuses on accuracy, structured formatting, citation visibility, and review safeguards — making it suitable for legal environments where detail, accountability, and clarity matter.",
+    answer: "Lexoris is built specifically for legal and professional use. Beyond transcription, it focuses on accuracy, structured formatting, citation visibility, and review safeguards — tailored for legal environments where detail, accountability, and clarity matter.",
   },
   {
     question: "Is Lexoris accurate enough for legal or professional work?",
-    answer: "Yes. Lexoris combines advanced speech recognition with structured post-processing to improve accuracy. All transcripts are designed to be reviewed before use, supporting professional standards rather than replacing them.",
+    answer: "Yes. Lexoris is specifically designed by Australian legal professionals for Australian legal professionals. Lexoris combines advanced speech recognition with structured post-processing to improve accuracy. All transcripts are designed to be reviewed before use, supporting professional standards rather than replacing them.",
   },
   {
     question: "Can Lexoris handle multiple speakers?",
@@ -33,7 +33,7 @@ const faqPageFAQs = [
   },
   {
     question: "Can Lexoris fit into existing legal workflows?",
-    answer: "Yes. Lexoris is designed to support existing workflows, not replace them. Most users treat it as a first-pass transcript that removes hours of manual work while retaining full review and control. Lexoris is browser-based and compatible with both desktop and mobile devices.",
+    answer: "Yes. Lexoris is designed to support existing workflows, not replace them. Most users treat it as a first-pass transcript that removes hours of manual work while retaining full review and control. Lexoris is browser-based and compatible with all desktop and mobile devices.",
   },
   {
     question: "Why should I use Lexoris instead of a free transcription tool?",
