@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/hooks/use-scroll-animation";
-import { Shield, Server, Lock, Scale, Play } from "lucide-react";
+import { Shield, Server, Lock, Scale } from "lucide-react";
 import homeCarousel from "@/assets/home-carousel.png";
 import recordingCarousel from "@/assets/recording-carousel.png";
 import downloadCarousel from "@/assets/download-carousel.png";
@@ -120,7 +120,7 @@ const Index = () => {
             <Scale className="w-10 h-10 text-lexoris-red mx-auto mb-4" />
             <h4 className="font-heading text-xl font-bold text-foreground mb-3">AI Legal Accuracy</h4>
             <p className="text-muted-foreground leading-relaxed">
-              Trained for Australian legal terminology for precise transcripts. Post-correction enhances transcripts through structured formatting, AGLC-style citations, and language accuracy.
+              Trained for Australian legal terminology for precise transcripts.
             </p>
           </div>
           <div className="feature-card text-center">
@@ -143,11 +143,16 @@ const Index = () => {
       <AnimatedSection className="py-24 px-5">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="section-title">See Lexoris in Action</h2>
-          <div className="video-placeholder">
-            <div className="play-icon">
-              <Play className="w-12 h-12 text-muted-foreground" fill="currentColor" />
-            </div>
-            <p className="text-muted-foreground mt-4">Product demo coming soon</p>
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <video 
+              controls 
+              className="w-full h-auto"
+              poster=""
+              preload="metadata"
+            >
+              <source src="/Lexoris_Product_Video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </AnimatedSection>
