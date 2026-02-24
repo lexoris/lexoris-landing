@@ -44,7 +44,7 @@ const Security = () => {
             Lexoris is built for Australian legal practice. Your data is exclusively hosted on Australian servers, is encrypted end-to-end, and is never used for AI training.
           </p>
           <p className="text-center max-w-3xl mx-auto mb-16 text-lg text-muted-foreground">
-            Our data handling and privacy practices are aligned with GDPR principles and the Australian Privacy Principles.
+            Our data handling and privacy practices are aligned with GDPR principles and the Australian Privacy Act.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -52,36 +52,36 @@ const Security = () => {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-primary" />
               </div>
-              <h4 className="font-heading text-lg font-bold text-foreground mb-2">End-to-End Encryption</h4>
+              <h4 className="font-heading text-lg font-bold text-foreground mb-2">End-to-End Secure Infrastructure</h4>
               <p className="text-muted-foreground text-sm">
-                All data encrypted in transit and at rest using AES-256.
+                All data is transmitted over fully encrypted HTTPS connections, with secure password hashing implemented to protect user credentials at every stage.
               </p>
             </div>
             <div className="feature-card text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Lock className="w-8 h-8 text-primary" />
               </div>
-              <h4 className="font-heading text-lg font-bold text-foreground mb-2">No Data Retention</h4>
+              <h4 className="font-heading text-lg font-bold text-foreground mb-2">Authenticated Access</h4>
               <p className="text-muted-foreground text-sm">
-                Files automatically deleted after download. Zero storage policy.
+                Our token-secured APIs ensure only authorised requests can interact with the platform — protecting your transcripts, audio files, and account data.
               </p>
             </div>
             <div className="feature-card text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Server className="w-8 h-8 text-primary" />
               </div>
-              <h4 className="font-heading text-lg font-bold text-foreground mb-2">Australian Data Residency</h4>
+              <h4 className="font-heading text-lg font-bold text-foreground mb-2">Protected File Authorisation</h4>
               <p className="text-muted-foreground text-sm">
-                Infrastructure is hosted on Australian servers for compliance.
+                Sensitive downloads, including audio and DOCX documents, are validated using secure JWT authentication to prevent unauthorised access.
               </p>
             </div>
             <div className="feature-card text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Scale className="w-8 h-8 text-primary" />
               </div>
-              <h4 className="font-heading text-lg font-bold text-foreground mb-2">Built for Legal Practice</h4>
+              <h4 className="font-heading text-lg font-bold text-foreground mb-2">Isolated User Data Storage</h4>
               <p className="text-muted-foreground text-sm">
-                Designed to meet legal industry security standards.
+                Each account operates within its own segregated storage structure, ensuring strict data separation and preventing unauthorised access to other users' files.
               </p>
             </div>
           </div>
