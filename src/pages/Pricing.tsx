@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/hooks/use-scroll-animation";
-import freeLogo from "@/assets/free-logo.png";
+import { Building2 } from "lucide-react";
 import standardLogo from "@/assets/standard-logo.png";
 import professionalLogo from "@/assets/professional-logo.png";
 import FAQSchema from "@/components/FAQSchema";
@@ -10,13 +11,6 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import ProductSchema from "@/components/ProductSchema";
 
 const pricingServices = [
-  {
-    name: "Lexoris Free Trial",
-    description: "21-day trial with 60 minutes of Australian-hosted legal transcription included",
-    price: 0,
-    priceCurrency: "AUD",
-    availability: "InStock",
-  },
   {
     name: "Lexoris Standard Plan",
     description: "100 minutes per month of secure, Australian-hosted legal transcription",
@@ -62,24 +56,54 @@ const pricingFAQs = [
 ];
 
 const Pricing = () => {
+  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
+
   const plans = [
-    {
-      name: "Free Trial",
-      price: "21 days / 60 mins",
-      cta: "Start Now",
-      logo: freeLogo,
-    },
     {
       name: "Standard",
       price: "$29 / 100 mins",
-      cta: "Upgrade",
+      cta: "Start Standard Plan",
+      ctaLink: "/signup",
       logo: standardLogo,
+      featured: true,
+      description: undefined as string | undefined,
+      subtext: undefined as string | undefined,
+      bullets: [
+        "Designed for moderate users",
+        "AGLC-aligned post-correction",
+        "Australian-hosted infrastructure",
+      ],
     },
     {
       name: "Professional",
       price: "$49 / 300 mins",
-      cta: "Upgrade",
+      cta: "Start Professional Plan",
+      ctaLink: "/signup",
       logo: professionalLogo,
+      featured: false,
+      description: undefined as string | undefined,
+      subtext: undefined as string | undefined,
+      bullets: [
+        "Designed for frequent users",
+        "Expanded monthly minutes",
+        "Secure Australian data hosting",
+      ],
+    },
+    {
+      name: "Enterprise",
+      price: "Custom",
+      cta: "Contact Us",
+      ctaLink: "/faq",
+      logo: undefined as string | undefined,
+      useIcon: true,
+      featured: false,
+      description: undefined as string | undefined,
+      subtext: undefined as string | undefined,
+      bullets: [
+        "Tailored transcription solutions",
+        "Higher monthly volumes",
+        "Custom integration",
+      ],
     },
   ];
 
@@ -88,46 +112,90 @@ const Pricing = () => {
       <FAQSchema faqs={pricingFAQs} />
       <BreadcrumbSchema />
       <ProductSchema services={pricingServices} />
-      <AnimatedSection className="pt-40 pb-24 px-5 bg-background">
+      <AnimatedSection className="pt-32 pb-20 px-5 bg-background">
         <div className="max-w-5xl mx-auto">
           <h1 className="section-title">Pricing</h1>
 
-          <div className="max-w-3xl mx-auto mb-16 text-center space-y-6">
+          <div className="max-w-2xl mx-auto mb-8 text-center space-y-2">
             <p className="text-lg text-muted-foreground">
-              Enjoy a 21-day complimentary trial of Lexoris, including 60 minutes of transcription to explore the platform in full.
+              Every plan includes a 21-day complimentary trial with 60 minutes of transcription.
             </p>
             <p className="text-lg text-muted-foreground">
-              To activate your trial, simply select a plan.<br />
-              You won't be charged until your 21 days conclude — and you may cancel anytime before then at no cost.
-            </p>
-            <p className="text-lg text-muted-foreground">
-              If you exceed your included minutes, additional transcription credits can be added instantly at $5 per 20 minutes, ensuring uninterrupted access when you need it.
-            </p>
-            <p className="text-lg font-semibold text-foreground">
-              No lock-ins. No surprises.
-            </p>
-            <p className="text-lg text-muted-foreground">
-              Just secure, Australian-hosted legal transcription — on your terms.
+              You won't be charged until your trial ends. Cancel anytime.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* Billing toggle */}
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <button
+              onClick={() => setBillingPeriod("monthly")}
+              className={`text-sm font-semibold px-4 py-2 rounded-md transition-colors ${
+                billingPeriod === "monthly"
+                  ? "bg-secondary text-secondary-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Monthly
+            </button>
+            <button
+              onClick={() => setBillingPeriod("annual")}
+              className={`text-sm font-semibold px-4 py-2 rounded-md transition-colors ${
+                billingPeriod === "annual"
+                  ? "bg-secondary text-secondary-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Annual (Save 15%)
+            </button>
+          </div>
+
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-end">
             {plans.map((plan, index) => (
-            <div key={index} className={`pricing-card ${plan.name === "Standard" ? "relative" : ""}`}>
-                {plan.name === "Standard" && (
+              <div
+                key={index}
+                className={`pricing-card relative ${
+                  plan.featured
+                    ? "border-t-[2px] border-primary bg-card scale-[1.03] shadow-[0_10px_30px_rgba(0,0,0,0.12)] z-10 min-h-[420px]"
+                    : "min-h-[390px]"
+                }`}
+              >
+                {plan.featured && (
                   <div className="plan-badge">Most Popular</div>
                 )}
                 <div>
-                  <img src={plan.logo} alt={`${plan.name} Logo`} className="plan-logo" />
+                  {plan.logo ? (
+                    <img src={plan.logo} alt={`${plan.name} Logo`} className="plan-logo" />
+                  ) : (plan as any).useIcon ? (
+                    <Building2 className="w-12 h-12 text-muted-foreground mb-[18px] mx-auto opacity-90" />
+                  ) : null}
                   <h3 className="font-heading text-2xl font-bold text-foreground mb-4">
                     {plan.name}
                   </h3>
-                  <p className="text-lg text-muted-foreground mb-8">{plan.price}</p>
+                  <p className="text-lg text-muted-foreground mb-2">{plan.price}</p>
+                  {plan.description && (
+                    <p className="text-sm text-muted-foreground mb-4 px-2">{plan.description}</p>
+                  )}
+                  <ul className="text-left text-sm text-muted-foreground space-y-2 mb-6 px-2">
+                    {plan.bullets.map((bullet, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-primary mt-0.5">•</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {plan.subtext && (
+                    <p className="text-xs text-muted-foreground italic px-2 mb-6">{plan.subtext}</p>
+                  )}
                 </div>
-                <Link to="/signup">
-                  <Button 
-                    variant={plan.name === "Free Trial" ? "default" : "outline"}
-                    className={`w-full ${plan.name !== "Free Trial" ? "bg-[hsl(0,0%,96%)] text-[hsl(213,60%,11%)] border-[hsl(0,0%,20%)] shadow-[0_4px_14px_-3px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.2)] hover:bg-[hsl(0,0%,90%)]" : ""}`}
+                <Link to={plan.ctaLink}>
+                  <Button
+                    variant={plan.featured ? "default" : "outline"}
+                    className={`w-full ${
+                      !plan.featured
+                        ? "bg-[hsl(0,0%,96%)] text-[hsl(213,60%,11%)] border-[hsla(0,0%,20%,0.4)] shadow-[0_4px_14px_-3px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.2)] hover:bg-[hsl(0,0%,90%)]"
+                        : ""
+                    }`}
                   >
                     {plan.cta}
                   </Button>
@@ -135,12 +203,12 @@ const Pricing = () => {
               </div>
             ))}
           </div>
-
-          <p className="text-center mt-16 italic text-muted-foreground">
-            No setup fees. Cancel anytime.
+          <p className="text-center text-sm text-muted-foreground mt-10 max-w-xl mx-auto">
+            If you exceed your included minutes, additional transcription credits can be added instantly at $5 per 20 minutes, ensuring uninterrupted access when you need it.
           </p>
 
-          <div className="text-center mt-12">
+
+          <div className="text-center mt-10">
             <p className="text-lg text-foreground mb-4">Have questions about pricing?</p>
             <Link to="/faq">
               <Button variant="outline">View FAQ →</Button>
