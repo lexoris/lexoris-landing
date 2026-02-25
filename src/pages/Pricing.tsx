@@ -91,7 +91,26 @@ const Pricing = () => {
       <AnimatedSection className="pt-40 pb-24 px-5 bg-background">
         <div className="max-w-5xl mx-auto">
           <h1 className="section-title">Pricing</h1>
-          
+
+          <div className="max-w-3xl mx-auto mb-16 text-center space-y-6">
+            <p className="text-lg text-muted-foreground">
+              Enjoy a 21-day complimentary trial of Lexoris, including 60 minutes of transcription to explore the platform in full.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              To activate your trial, simply select a plan.<br />
+              You won't be charged until your 21 days conclude — and you may cancel anytime before then at no cost.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              If you exceed your included minutes, additional transcription credits can be added instantly at $5 per 20 minutes, ensuring uninterrupted access when you need it.
+            </p>
+            <p className="text-lg font-semibold text-foreground">
+              No lock-ins. No surprises.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              Just secure, Australian-hosted legal transcription — on your terms.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             {plans.map((plan, index) => (
             <div key={index} className={`pricing-card ${plan.name === "Standard" ? "relative" : ""}`}>
@@ -106,7 +125,10 @@ const Pricing = () => {
                   <p className="text-lg text-muted-foreground mb-8">{plan.price}</p>
                 </div>
                 <Link to="/signup">
-                  <Button variant="default" className="w-full">
+                  <Button 
+                    variant={plan.name === "Free Trial" ? "default" : "outline"}
+                    className={`w-full ${plan.name !== "Free Trial" ? "bg-[hsl(0,0%,96%)] text-[hsl(213,60%,11%)] border-[hsl(0,0%,20%)] shadow-[0_4px_14px_-3px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.2)] hover:bg-[hsl(0,0%,90%)]" : ""}`}
+                  >
                     {plan.cta}
                   </Button>
                 </Link>
@@ -115,7 +137,7 @@ const Pricing = () => {
           </div>
 
           <p className="text-center mt-16 italic text-muted-foreground">
-            Overage rate $0.25 / min. No setup fees. Cancel anytime.
+            No setup fees. Cancel anytime.
           </p>
 
           <div className="text-center mt-12">
