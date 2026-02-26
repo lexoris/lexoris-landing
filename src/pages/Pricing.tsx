@@ -112,7 +112,7 @@ const Pricing = () => {
       <FAQSchema faqs={pricingFAQs} />
       <BreadcrumbSchema />
       <ProductSchema services={pricingServices} />
-      <AnimatedSection className="pt-32 pb-20 px-5 bg-background">
+      <AnimatedSection className="pt-40 pb-24 px-5 bg-background">
         <div className="max-w-5xl mx-auto">
           <h1 className="section-title">Pricing</h1>
 
@@ -167,7 +167,7 @@ const Pricing = () => {
                   {plan.logo ? (
                     <img src={plan.logo} alt={`${plan.name} Logo`} className="plan-logo" />
                   ) : (plan as any).useIcon ? (
-                    <Building2 className="w-12 h-12 text-muted-foreground mb-[18px] mx-auto opacity-90" />
+                    <Building2 className="w-12 h-12 mb-[18px] mx-auto" style={{ color: '#D2D3D3' }} />
                   ) : null}
                   <h3 className="font-heading text-2xl font-bold text-foreground mb-4">
                     {plan.name}
