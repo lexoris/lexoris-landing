@@ -63,11 +63,11 @@ const Index = () => {
           The transcription platform built for legal professionals exclusively hosted on Australian servers.
         </p>
         <div className="mt-8">
-          <Link to="/signup">
+          <a href="https://app.lexoris.com.au/" target="_blank" rel="noopener noreferrer">
             <Button variant="hero" className="animate-fade-in w-full max-w-xs md:w-auto" style={{ animationDelay: '0.2s' }}>
               Start Free Trial
             </Button>
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -163,15 +163,15 @@ const Index = () => {
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
           Create your Lexoris account and begin your 21-day free trial with 60 minutes included.
         </p>
-        <Link to="/signup">
+        <a href="https://app.lexoris.com.au/" target="_blank" rel="noopener noreferrer">
           <Button variant="hero">Start Free Trial</Button>
-        </Link>
+        </a>
       </AnimatedSection>
 
       {/* Sticky CTA */}
-      <Link to="/signup" className="sticky-cta">
+      <a href="https://app.lexoris.com.au/" target="_blank" rel="noopener noreferrer" className="sticky-cta">
         Start Free Trial
-      </Link>
+      </a>
     </Layout>
   );
 };
