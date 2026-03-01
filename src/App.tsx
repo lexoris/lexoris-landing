@@ -9,7 +9,7 @@ import HowItWorks from "./pages/HowItWorks";
 import WhyLexoris from "./pages/WhyLexoris";
 import Pricing from "./pages/Pricing";
 import FAQ from "./pages/FAQ";
-import Signup from "./pages/Signup";
+
 import Security from "./pages/Security";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -33,7 +33,7 @@ const App = () => (
           <Route path="/why-lexoris" element={<WhyLexoris />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/faq" element={<FAQ />} />
-          <Route path="/signup" element={<Signup />} />
+          
           <Route path="/security" element={<Security />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
