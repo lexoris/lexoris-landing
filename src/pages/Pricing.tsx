@@ -63,7 +63,7 @@ const Pricing = () => {
       name: "Standard",
       price: "$29 / 100 mins",
       cta: "Start Standard Plan",
-      ctaLink: "/signup",
+      ctaLink: "https://app.lexoris.com.au/",
       logo: standardLogo,
       featured: true,
       description: undefined as string | undefined,
@@ -78,7 +78,7 @@ const Pricing = () => {
       name: "Professional",
       price: "$49 / 300 mins",
       cta: "Start Professional Plan",
-      ctaLink: "/signup",
+      ctaLink: "https://app.lexoris.com.au/",
       logo: professionalLogo,
       featured: false,
       description: undefined as string | undefined,
@@ -188,7 +188,7 @@ const Pricing = () => {
                     <p className="text-xs text-muted-foreground italic px-2 mb-6">{plan.subtext}</p>
                   )}
                 </div>
-                <Link to={plan.ctaLink}>
+                <a href={plan.ctaLink} target={plan.ctaLink.startsWith("http") ? "_blank" : undefined} rel={plan.ctaLink.startsWith("http") ? "noopener noreferrer" : undefined}>
                   <Button
                     variant={plan.featured ? "default" : "outline"}
                     className={`w-full ${
@@ -199,7 +199,7 @@ const Pricing = () => {
                   >
                     {plan.cta}
                   </Button>
-                </Link>
+                </a>
               </div>
             ))}
           </div>
