@@ -42,8 +42,8 @@ const WhyLexoris = () => {
   const comparisonData = [
     { feature: "Australian Legal Vocabulary", lexoris: true, otter: false, dragon: true, microsoft: false },
     { feature: "Australian Servers & Data Residency", lexoris: true, otter: false, dragon: true, microsoft: false },
-    { feature: "No Data Retention", lexoris: true, otter: false, dragon: false, microsoft: false },
-    { feature: "Post Correction With AGLC Citations", lexoris: true, otter: false, dragon: false, microsoft: false },
+    { feature: "Your Data Is Not Stored", lexoris: true, otter: false, dragon: false, microsoft: false },
+    { feature: "Post-Correction for Errors", lexoris: true, otter: false, dragon: false, microsoft: false },
     { feature: "Flexible Pricing (No Lock-In Contracts)", lexoris: true, otter: true, dragon: false, microsoft: false },
     { feature: "Microsoft & Apple Device Compatibility", lexoris: true, otter: true, dragon: false, microsoft: true },
     { feature: "Intuitive Usability", lexoris: true, otter: false, dragon: false, microsoft: false },
@@ -102,9 +102,9 @@ const WhyLexoris = () => {
           </div>
 
           <div className="text-center mt-16">
-            <Link to="/signup">
+            <a href="https://app.lexoris.com.au/" target="_blank" rel="noopener noreferrer">
               <Button variant="hero">Start Your Free Trial</Button>
-            </Link>
+            </a>
           </div>
         </div>
       </AnimatedSection>
