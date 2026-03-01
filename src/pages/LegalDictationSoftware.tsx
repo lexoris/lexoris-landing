@@ -28,7 +28,7 @@ const LegalDictationSoftware = () => {
 
   return (
     <Layout>
-      <section className="pt-42 pb-20 px-5">
+      <section className="pt-40 pb-20 px-5">
         <div className="max-w-4xl mx-auto">
           {/* H1 */}
           <h1 className="section-title mb-8">Legal Dictation Software for Law Firms</h1>
@@ -70,7 +70,7 @@ const LegalDictationSoftware = () => {
                   Step 1: Record or Upload
                 </h3>
                 <p className="text-muted-foreground text-lg">
-                  Record directly in Lexoris or upload your existing audio file securely. All files are encrypted in transit to align with professional confidentiality obligations.
+                  Record directly in Lexoris or upload your existing audio file securely. All files are encrypted in transit and handled in line with professional confidentiality obligations.
                 </p>
               </div>
               
@@ -82,7 +82,7 @@ const LegalDictationSoftware = () => {
                   Step 2: AI Transcribes and Post-Processes
                 </h3>
                 <p className="text-muted-foreground text-lg">
-                  Lexoris transcribes your audio using advanced AI that is post-processed for Australian legal terminology, formal legal writing styles, and structured readability. Transcripts support single-speaker and multi-speaker formats and apply AGLC-aligned citation formatting.
+                  Lexoris transcribes your audio using advanced AI that is post-processed for Australian legal terminology, formal legal writing styles, and structured readability. Where applicable, transcripts support single-speaker and multi-speaker formats and apply AGLC-aligned citation formatting.
                 </p>
               </div>
               
@@ -194,12 +194,8 @@ const LegalDictationSoftware = () => {
                   {DEMO_BOOKING_LABEL}
                 </a>
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => window.open("https://app.lexoris.com.au/signup", "_blank")}
-              >
-                Start free trial
+              <Button asChild variant="outline" size="lg">
+                <a href="https://app.lexoris.com.au/" target="_blank" rel="noopener noreferrer">Start free trial</a>
               </Button>
             </div>
           </div>
