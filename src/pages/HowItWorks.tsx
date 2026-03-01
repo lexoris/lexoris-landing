@@ -76,9 +76,9 @@ const HowItWorks = () => {
             <p className="text-lg text-muted-foreground mb-6">
               Ready to experience seamless legal transcription?
             </p>
-            <Link to="/signup">
+            <a href="https://app.lexoris.com.au/" target="_blank" rel="noopener noreferrer">
               <Button variant="hero">Get Started Today</Button>
-            </Link>
+            </a>
           </div>
         </div>
       </AnimatedSection>
