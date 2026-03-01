@@ -33,7 +33,7 @@ const TranscriptionForBarristers = () => {
 
   return (
     <Layout>
-      <section className="pt-42 pb-20 px-5">
+      <section className="pt-40 pb-20 px-5">
         <div className="max-w-4xl mx-auto">
           <h1 className="section-title mb-8">Built for Barristers Who Rely on Dictation</h1>
           
@@ -190,7 +190,7 @@ const TranscriptionForBarristers = () => {
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/signup">Start free trial</Link>
+                <a href="https://app.lexoris.com.au/" target="_blank" rel="noopener noreferrer">Start free trial</a>
               </Button>
             </div>
             
