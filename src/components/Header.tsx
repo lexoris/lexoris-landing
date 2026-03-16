@@ -69,7 +69,15 @@ const Header = () => {
             {link.label}
           </Link>
         ))}
-        <a href="https://app.lexoris.com.au/" target="_blank" rel="noopener noreferrer">
+        <a 
+          href="https://app.lexoris.com.au/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="font-heading font-medium text-base text-white/[0.65] hover:text-white transition-colors duration-300 ml-8"
+        >
+          Sign In
+        </a>
+        <a href="https://app.lexoris.com.au/" target="_blank" rel="noopener noreferrer" className="ml-4">
           <Button variant="nav">Start Free Trial</Button>
         </a>
       </nav>
@@ -87,6 +95,15 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
+          <a 
+            href="https://app.lexoris.com.au/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            onClick={() => setIsMenuOpen(false)}
+            className="text-white/70 font-heading font-semibold text-xl hover:text-white transition-colors min-h-[44px] flex items-center w-full"
+          >
+            Sign In
+          </a>
           <a href="https://app.lexoris.com.au/" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="w-full mt-2">
             <Button variant="nav" className="w-full">Start Free Trial</Button>
           </a>
