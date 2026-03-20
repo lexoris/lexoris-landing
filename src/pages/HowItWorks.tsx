@@ -38,17 +38,17 @@ const HowItWorks = () => {
     {
       icon: <Volume2 className="w-12 h-12 text-primary" />,
       title: "Step 1: Record or Upload",
-      description: "Record or upload your audio file securely with one click and full encryption.",
+      description: "Record directly on the platform or securely upload your audio file.",
     },
     {
       icon: <Activity className="w-12 h-12 text-primary" />,
-      title: "Step 2: AI Transcribes",
-      description: "Our advanced AI transcribes with legal precision and post-corrects for unmatched accuracy.",
+      title: "Step 2: AI Processes & Post-Corrects",
+      description: "Lexoris processes your dictation using AI, structuring and refining it into a clear, usable first draft — not just a raw transcript. Formatting is applied and AGLC referencing included where appropriate.",
     },
     {
       icon: <FileText className="w-12 h-12 text-primary" />,
       title: "Step 3: Export to Word",
-      description: "Instantly export your completed document to Word — all processing occurs on Australian servers.",
+      description: "Export your draft to Word instantly, ready for review and refinement. Your audio file and transcript are automatically deleted once download is complete.",
     },
   ];
 
@@ -74,7 +74,7 @@ const HowItWorks = () => {
 
           <div className="text-center mt-16">
             <p className="text-lg text-muted-foreground mb-6">
-              Ready to experience seamless legal transcription?
+              Traditional transcription captures what you said. Lexoris structures it into something you can refine.
             </p>
             <a href="https://app.lexoris.com.au/" target="_blank" rel="noopener noreferrer">
               <Button variant="hero">Get Started Today</Button>
