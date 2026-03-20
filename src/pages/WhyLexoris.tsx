@@ -25,7 +25,7 @@ const WhyLexoris = () => {
     {
       icon: <Clock className="w-10 h-10 text-primary" />,
       title: "Transform Your Time",
-      description: "Automation saves hours in admin, freeing time for billable work.",
+      description: "Lexoris turns dictation into a structured first draft fast — giving you hours back for billable work or time outside of it.",
     },
     {
       icon: <Shield className="w-10 h-10 text-primary" />,
@@ -43,11 +43,13 @@ const WhyLexoris = () => {
     { feature: "Australian Legal Vocabulary", lexoris: true, otter: false, dragon: true, microsoft: false },
     { feature: "Australian Servers & Data Residency", lexoris: true, otter: false, dragon: true, microsoft: false },
     { feature: "Your Data Is Not Stored", lexoris: true, otter: false, dragon: false, microsoft: false },
-    { feature: "Post-Correction for Errors", lexoris: true, otter: false, dragon: false, microsoft: false },
+    { feature: "AI Post-Correction", lexoris: true, otter: false, dragon: false, microsoft: false },
     { feature: "Flexible Pricing (No Lock-In Contracts)", lexoris: true, otter: true, dragon: false, microsoft: false },
     { feature: "Microsoft & Apple Device Compatibility", lexoris: true, otter: true, dragon: false, microsoft: true },
-    { feature: "Intuitive Usability", lexoris: true, otter: false, dragon: false, microsoft: false },
+    { feature: "Intuitive, Workflow-Aligned Usability", lexoris: true, otter: false, dragon: false, microsoft: false },
     { feature: "Australian Real-Time Support", lexoris: true, otter: false, dragon: true, microsoft: false },
+    { feature: "AGLC Referencing Applied", lexoris: true, otter: false, dragon: false, microsoft: false },
+    { feature: "Structured First Draft", lexoris: true, otter: false, dragon: false, microsoft: false },
   ];
 
   return (
@@ -58,8 +60,7 @@ const WhyLexoris = () => {
           <h1 className="section-title">Why Lexoris?</h1>
           
           <p className="text-center max-w-3xl mx-auto mb-16 text-lg text-muted-foreground">
-            Built for Australian legal professionals, Lexoris recognises the need for a streamlined, 
-            secure, and Australian hosted approach to legal transcription.
+            Built for Australian legal professionals, Lexoris transforms dictation with a streamlined, secure and Australian-hosted platform producing structured first drafts, ready for refinement.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
