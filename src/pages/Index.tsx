@@ -56,7 +56,7 @@ const Index = () => {
       <section className="text-center pt-44 pb-40 px-5 md:px-8 bg-gradient-to-br from-lexoris-navy to-lexoris-navy-light text-primary-foreground">
         <div className="max-w-[600px] mx-auto">
           <h2 className="font-heading text-[32px] md:text-5xl font-bold mb-9 leading-[1.25] md:leading-[1.28] tracking-[-0.02em] animate-fade-in" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.35)' }}>
-            <span className="block mb-3 md:mb-4">Better legal dictation.</span>
+            <span className="block mb-3 md:mb-4">Legal dictation, redefined.</span>
             <span className="block text-lexoris-red">Structured first drafts.</span>
           </h2>
 
@@ -64,9 +64,6 @@ const Index = () => {
             Lexoris is an AI-powered tool that enhances dictation and transcription, turning your speech into a structured first draft ready for you to refine.
           </p>
 
-          <p className="text-xs md:text-sm mx-auto mt-5 mb-16 opacity-[0.75] animate-fade-in px-4 tracking-wide" style={{ animationDelay: '0.15s' }}>
-            Built for Australian legal practice. Hosted on Australian (Sydney) servers.
-          </p>
 
           <div className="mt-8">
             <a href="https://app.lexoris.com.au/" target="_blank" rel="noopener noreferrer">
