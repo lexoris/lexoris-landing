@@ -9,6 +9,13 @@ import professionalLogo from "@/assets/professional-logo.png";
 import FAQSchema from "@/components/FAQSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import ProductSchema from "@/components/ProductSchema";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 const pricingServices = [
   {
@@ -57,52 +64,58 @@ const pricingFAQs = [
 
 const Pricing = () => {
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
+  const [enterpriseDialogOpen, setEnterpriseDialogOpen] = useState(false);
 
   const plans = [
     {
       name: "Standard",
-      price: "$29 / 100 mins",
+      monthlyPrice: "$29",
+      annualPrice: "$295",
+      minutes: "100 minutes",
+      annualMinutes: "1,200 minutes",
       cta: "Start Standard Plan",
       ctaLink: "https://app.lexoris.com.au/",
       logo: standardLogo,
       featured: true,
-      description: undefined as string | undefined,
-      subtext: undefined as string | undefined,
       bullets: [
-        "Designed for moderate users",
-        "AGLC-aligned post-correction",
-        "Australian-hosted infrastructure",
+        "Designed for individual moderate users",
+        "Record and upload functionality",
+        "Single speaker and multi speaker transcripts",
+        "AGLC aligned citations",
       ],
     },
     {
       name: "Professional",
-      price: "$49 / 300 mins",
+      monthlyPrice: "$49",
+      annualPrice: "$500",
+      minutes: "300 minutes",
+      annualMinutes: "3,600 minutes",
       cta: "Start Professional Plan",
       ctaLink: "https://app.lexoris.com.au/",
       logo: professionalLogo,
       featured: false,
-      description: undefined as string | undefined,
-      subtext: undefined as string | undefined,
       bullets: [
-        "Designed for frequent users",
-        "Expanded monthly minutes",
-        "Secure Australian data hosting",
+        "Designed for individual frequent users",
+        "Record and upload functionality",
+        "Single speaker and multi speaker transcripts",
+        "AGLC aligned citations",
       ],
     },
     {
       name: "Enterprise",
-      price: "Custom",
+      monthlyPrice: "Custom",
+      annualPrice: "Custom",
+      minutes: undefined as string | undefined,
+      annualMinutes: undefined as string | undefined,
       cta: "Contact Us",
       ctaLink: "/faq",
       logo: undefined as string | undefined,
       useIcon: true,
       featured: false,
-      description: undefined as string | undefined,
-      subtext: undefined as string | undefined,
       bullets: [
-        "Tailored transcription solutions",
-        "Higher monthly volumes",
-        "Custom integration",
+        "Designed for multiple users in firms and/or chambers",
+        "Tailored seat solutions to suit your needs",
+        "Dedicated technical support",
       ],
     },
   ];
@@ -150,33 +163,41 @@ const Pricing = () => {
           </div>
 
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-end">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
             {plans.map((plan, index) => (
               <div
                 key={index}
                 className={`pricing-card relative ${
                   plan.featured
-                    ? "border-t-[2px] border-primary bg-card scale-[1.03] shadow-[0_10px_30px_rgba(0,0,0,0.12)] z-10 min-h-[420px]"
-                    : "min-h-[390px]"
+                    ? "border-t-[2px] border-primary bg-card shadow-[0_8px_24px_rgba(0,0,0,0.08)] z-10"
+                    : ""
                 }`}
               >
                 {plan.featured && (
                   <div className="plan-badge">Most Popular</div>
                 )}
-                <div>
+                <div className="flex flex-col">
                   {plan.logo ? (
                     <img src={plan.logo} alt={`${plan.name} Logo`} className="plan-logo" />
                   ) : (plan as any).useIcon ? (
-                    <Building2 className="w-12 h-12 mb-[18px] mx-auto" style={{ color: '#D2D3D3' }} />
+                    <Building2 className="w-12 h-12 mb-5 mx-auto" style={{ color: '#D2D3D3' }} />
                   ) : null}
-                  <h3 className="font-heading text-2xl font-bold text-foreground mb-4">
+                  <h3 className="font-heading text-2xl font-bold text-foreground mb-5">
                     {plan.name}
                   </h3>
-                  <p className="text-lg text-muted-foreground mb-2">{plan.price}</p>
-                  {plan.description && (
-                    <p className="text-sm text-muted-foreground mb-4 px-2">{plan.description}</p>
-                  )}
-                  <ul className="text-left text-sm text-muted-foreground space-y-2 mb-6 px-2">
+                  <div className="mb-6">
+                    <p className="text-2xl md:text-3xl font-semibold text-foreground font-heading">
+                      {billingPeriod === "monthly" ? plan.monthlyPrice : plan.annualPrice}
+                    </p>
+                    {(billingPeriod === "monthly" ? plan.minutes : plan.annualMinutes) ? (
+                      <p className="text-sm text-muted-foreground/70 mt-2">
+                        {billingPeriod === "monthly" ? plan.minutes : plan.annualMinutes}
+                      </p>
+                    ) : (
+                      <p className="text-sm mt-2">&nbsp;</p>
+                    )}
+                  </div>
+                  <ul className="text-left text-sm text-muted-foreground space-y-3 mb-8 px-2 leading-relaxed">
                     {plan.bullets.map((bullet, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <span className="text-primary mt-0.5">•</span>
@@ -184,22 +205,29 @@ const Pricing = () => {
                       </li>
                     ))}
                   </ul>
-                  {plan.subtext && (
-                    <p className="text-xs text-muted-foreground italic px-2 mb-6">{plan.subtext}</p>
-                  )}
                 </div>
-                <a href={plan.ctaLink} target={plan.ctaLink.startsWith("http") ? "_blank" : undefined} rel={plan.ctaLink.startsWith("http") ? "noopener noreferrer" : undefined}>
+                {(plan as any).useIcon ? (
                   <Button
-                    variant={plan.featured ? "default" : "outline"}
-                    className={`w-full ${
-                      !plan.featured
-                        ? "bg-[hsl(0,0%,96%)] text-[hsl(213,60%,11%)] border-[hsla(0,0%,20%,0.4)] shadow-[0_4px_14px_-3px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.2)] hover:bg-[hsl(0,0%,90%)]"
-                        : ""
-                    }`}
+                    variant="outline"
+                    className="w-full mt-auto bg-[hsl(0,0%,96%)] text-[hsl(213,60%,11%)] border-[hsla(0,0%,20%,0.4)] shadow-[0_4px_14px_-3px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.2)] hover:bg-[hsl(0,0%,90%)]"
+                    onClick={() => setEnterpriseDialogOpen(true)}
                   >
                     {plan.cta}
                   </Button>
-                </a>
+                ) : (
+                  <a href={plan.ctaLink} target={plan.ctaLink.startsWith("http") ? "_blank" : undefined} rel={plan.ctaLink.startsWith("http") ? "noopener noreferrer" : undefined} className="mt-auto">
+                    <Button
+                      variant={plan.featured ? "default" : "outline"}
+                      className={`w-full ${
+                        !plan.featured
+                          ? "bg-[hsl(0,0%,96%)] text-[hsl(213,60%,11%)] border-[hsla(0,0%,20%,0.4)] shadow-[0_4px_14px_-3px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.2)] hover:bg-[hsl(0,0%,90%)]"
+                          : ""
+                      }`}
+                    >
+                      {plan.cta}
+                    </Button>
+                  </a>
+                )}
               </div>
             ))}
           </div>
@@ -216,6 +244,19 @@ const Pricing = () => {
           </div>
         </div>
       </AnimatedSection>
+      <Dialog open={enterpriseDialogOpen} onOpenChange={setEnterpriseDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="font-heading">Enterprise Pricing</DialogTitle>
+            <DialogDescription className="text-base leading-relaxed pt-2">
+              To discuss enterprise pricing options that best suit your business needs please email{" "}
+              <a href="mailto:admin@lexoris.com.au" className="text-primary font-semibold hover:underline">
+                admin@lexoris.com.au
+              </a>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </Layout>
   );
 };
