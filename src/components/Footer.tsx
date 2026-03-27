@@ -13,7 +13,7 @@ const Footer = () => {
       </div>
       
       <p className="font-bold mb-4 text-sm md:text-base px-4">
-        Locally Hosted. Legally Accurate. Transcription You Can Trust.
+        Legal dictation, redefined into structured first drafts.
       </p>
       
       <p className="mb-4 text-sm md:text-base px-4">
