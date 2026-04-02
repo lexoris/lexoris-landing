@@ -41,7 +41,7 @@ const Security = () => {
           <h1 className="section-title">Security & Compliance</h1>
           
           <p className="text-center max-w-3xl mx-auto mb-4 text-lg text-muted-foreground">
-            Lexoris is built for Australian legal practice. Your data is exclusively hosted on Australian servers, is encrypted end-to-end, and is never used for AI training.
+            Lexoris is built for Australian legal practice. Your data is exclusively hosted on Australian servers and encrypted end-to-end. 
           </p>
           <p className="text-center max-w-3xl mx-auto mb-16 text-lg text-muted-foreground">
             Our data handling and privacy practices are aligned with GDPR principles and the Australian Privacy Act.
