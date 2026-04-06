@@ -13,8 +13,8 @@ const SecureLegalTranscription = () => {
       answer: "Yes. Lexoris is designed specifically for legal professionals handling sensitive and privileged information.",
     },
     {
-      question: "Is data used to train AI models?",
-      answer: "No. Lexoris does not use customer audio or transcripts to train models.",
+      question: "Where is my data hosted?",
+      answer: "Lexoris is hosted on Australian (Sydney) servers.",
     },
     {
       question: "Do I retain control over my data?",
@@ -29,7 +29,7 @@ const SecureLegalTranscription = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-42 pb-16 px-5">
+      <section className="pt-40 pb-16 px-5">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="section-title mb-8">
             Secure Legal Transcription Software for Confidential Matters
